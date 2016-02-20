@@ -1,0 +1,29 @@
+package:
+  name: innoextract
+  version: 1.5
+
+source:
+  url: http://constexpr.org/innoextract/files/innoextract-1.5.tar.gz
+  fn: innoextract-1.5.tar.gz
+
+build:
+  features:
+    - vc9               [win and py27]
+    - vc10              [win and py34]
+    - vc14              [win and py35]
+
+requirements:
+  build:
+    - python
+    - boost
+    - cmake
+    - jom               [win]
+
+  run:
+    - boost
+
+about:
+  home: http://constexpr.org/innoextract/
+  license: zlib (http://zlib.net/zlib_license.html)
+  license_file: LICENSE
+  summary:

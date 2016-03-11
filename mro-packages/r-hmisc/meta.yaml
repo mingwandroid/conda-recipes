@@ -41,6 +41,7 @@ requirements:
     - r-proto
     - r-scales
     - gcc # [not win]
+    - r-rtools # [win]
 
   run:
     - r

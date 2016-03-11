@@ -31,7 +31,6 @@ if exist C:\msys64 (
 ) else (
   set MSYS2=C:\msys32
 )
-if "%MSYS2%" == "" exit 1
 
 @REM When building R packages we must use the compilers from the
 @REM r-rtools package, and not any from MSYS2. Need to do better
@@ -49,7 +48,7 @@ if defined CONDA_R (
 )
 
 
-FOR /F "delims=" %%i IN ('%MSYS2%\usr\bin\arch.exe') DO set "BUILDU=%%i"-pc-msys
+FOR /F "delims=" %%i IN ('%MSYS2%\usr\bin\arch.exe') DO set "BUILDU=%%i-pc-msys"
 FOR /F "delims=" %%i IN ('%MSYS2%\usr\bin\cygpath.exe -u %PREFIX%') DO set "PREFIXU=%%i"
 
 if "%ARCH%" == "64" (

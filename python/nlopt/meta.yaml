@@ -5,7 +5,7 @@ package:
 build:
   number: 1
 
-requirements: # [not win]
+requirements:
   build:      # [not win]
     - gcc     # [linux]
     - numpy   # [not win]
@@ -17,7 +17,7 @@ requirements: # [not win]
 
 test:
   imports:
-    - nlopt   # [not win]
+    - nlopt
 
 source:
   fn: nlopt-2.4.2.tar.gz

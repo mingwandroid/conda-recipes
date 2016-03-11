@@ -33,6 +33,7 @@ requirements:
   build:
     - r
     - gcc # [not win]
+    - r-rtools # [win]
 
   run:
     - r

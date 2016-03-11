@@ -35,6 +35,7 @@ requirements:
     - r-quadprog
     - r-zoo
     - gcc # [not win]
+    - r-rtools # [win]
 
   run:
     - r

@@ -30,6 +30,7 @@ build:
 requirements:
   build:
     - r
+    - r-rtools # [win]
 
   run:
     - r

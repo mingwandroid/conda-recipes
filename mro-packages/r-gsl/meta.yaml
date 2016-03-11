@@ -35,6 +35,7 @@ requirements:
     - gsl
     - gcc # [not win]
     - pkg-config # [not win]
+    - r-rtools # [win]
 
   run:
     - r

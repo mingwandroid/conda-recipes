@@ -34,6 +34,7 @@ requirements:
     - r
     - openssl
     - gcc # [not win]
+    - r-rtools # [win]
 
   run:
     - r

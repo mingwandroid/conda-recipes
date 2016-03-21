@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-libexpat
+  version: 2.1.0
+source:
+  url: http://repo.msys2.org/msys/sources/libexpat-2.1.0-2.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '2'
+requirements:
+  run:
+  - m2-msys2-gcc-libs
+about:
+  home: http://expat.sourceforge.net/
+  license: GPL (msys-2.0.dll linkage), custom
+  summary: An XML parser library
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/libexpat-2.1.0-2-i686.pkg.tar.xz
+      md5: e2ac4df4b9e6f5d284e6a77bd15e4213
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/libexpat-2.1.0-2-x86_64.pkg.tar.xz
+      md5: 91113c0c754df6fc7afe2554be09e6c1
+      mv-src: '*'
+      mv-dst: Library/

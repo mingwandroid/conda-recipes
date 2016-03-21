@@ -1,0 +1,28 @@
+package:
+  name: m2-msys2-libxslt
+  version: 1.1.28
+source:
+  url: http://repo.msys2.org/msys/sources/libxslt-1.1.28-7.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '7'
+requirements:
+  run:
+  - m2-msys2-libxml2
+  - m2-msys2-libgcrypt
+about:
+  home: http://xmlsoft.org/XSLT/
+  license: GPL (msys-2.0.dll linkage), custom
+  summary: XML stylesheet transformation library
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/libxslt-1.1.28-7-i686.pkg.tar.xz
+      md5: d94b8be19bb894827f4671eade6609ec
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/libxslt-1.1.28-7-x86_64.pkg.tar.xz
+      md5: bb625158455111551acac27d1acf734b
+      mv-src: '*'
+      mv-dst: Library/

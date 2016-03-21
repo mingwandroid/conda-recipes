@@ -1,0 +1,29 @@
+package:
+  name: m2-msys2-util-linux
+  version: 2.26.2
+source:
+  url: http://repo.msys2.org/msys/sources/util-linux-2.26.2-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-coreutils
+  - m2-msys2-libutil-linux
+  - m2-msys2-libiconv
+about:
+  home: http://www.kernel.org/pub/linux/utils/util-linux/
+  license: GPL (msys-2.0.dll linkage), GPL3
+  summary: Collection of basic system utilities
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/util-linux-2.26.2-1-i686.pkg.tar.xz
+      md5: 54583392d1b32d7cb4f836ec440325c0
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/util-linux-2.26.2-1-x86_64.pkg.tar.xz
+      md5: f235cce5e25b98d3c552d1b829e0f627
+      mv-src: '*'
+      mv-dst: Library/

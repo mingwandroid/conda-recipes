@@ -1,0 +1,29 @@
+package:
+  name: m2-msys2-rebase
+  version: 4.4.1
+source:
+  url: http://repo.msys2.org/msys/sources/rebase-4.4.1-6.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '6'
+requirements:
+  run:
+  - m2-msys2-msys2-runtime
+  - m2-msys2-dash
+about:
+  home: http://www.cygwin.com/
+  license: GPL (msys-2.0.dll linkage), custom
+  summary: The Cygwin rebase distribution contains four utilities, rebase, rebaseall,
+    peflags, and peflagsall.
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/rebase-4.4.1-6-i686.pkg.tar.xz
+      md5: e6934adb71524fc75b31886c22ba97b8
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/rebase-4.4.1-6-x86_64.pkg.tar.xz
+      md5: b7f19b9b347fbf77820d4fd68de2be66
+      mv-src: '*'
+      mv-dst: Library/

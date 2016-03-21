@@ -1,0 +1,26 @@
+package:
+  name: m2-msys2-filesystem
+  version: '2015.04'
+source:
+  url: http://repo.msys2.org/msys/sources/filesystem-2015.04-3.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '3'
+requirements:
+  run: []
+about:
+  home: http://sourceforge.net/projects/msys2/
+  license: GPL (msys-2.0.dll linkage), BSD
+  summary: Base filesystem
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/filesystem-2015.04-3-i686.pkg.tar.xz
+      md5: e5b359db157a47ec4e4aef0efdd9c8ab
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/filesystem-2015.04-3-x86_64.pkg.tar.xz
+      md5: 641daf0c7d036d786803425a14f06bb2
+      mv-src: '*'
+      mv-dst: Library/

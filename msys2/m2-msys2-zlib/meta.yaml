@@ -1,0 +1,28 @@
+package:
+  name: m2-msys2-zlib
+  version: 1.2.8
+source:
+  url: http://repo.msys2.org/msys/sources/zlib-1.2.8-3.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '3'
+requirements:
+  run:
+  - m2-msys2-gcc-libs
+about:
+  home: http://www.zlib.net/
+  license: GPL (msys-2.0.dll linkage), custom
+  summary: Compression library implementing the deflate compression method found in
+    gzip and PKZIP
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/zlib-1.2.8-3-i686.pkg.tar.xz
+      md5: c507ca9cdf460859a9d737d7a8ef1bc5
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/zlib-1.2.8-3-x86_64.pkg.tar.xz
+      md5: 5805b3b38f8047c886a52289a6dbf98c
+      mv-src: '*'
+      mv-dst: Library/

@@ -1,0 +1,28 @@
+package:
+  name: m2-mingw-w64-binutils
+  version: '2.26'
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-binutils-2.26-22.src.tar.gz
+  md5: 5f4c9b98624ed925da1942ef2716b1c5
+build:
+  number: '22'
+requirements:
+  run:
+  - m2-mingw-w64-libiconv
+  - m2-mingw-w64-zlib
+about:
+  home: https://www.gnu.org/software/binutils/
+  license: GPL
+  summary: A set of programs to assemble and manipulate binary and object files (mingw-w64)
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-binutils-2.26-22-any.pkg.tar.xz
+      md5: e9a29bde941edc31d9122314b43208d7
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-binutils-2.26-22-any.pkg.tar.xz
+      md5: e79f966ec5fdf5777abb7c873c67d7a0
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

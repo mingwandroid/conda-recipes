@@ -1,0 +1,28 @@
+package:
+  name: m2-msys2-perl-locale-gettext
+  version: '1.05'
+source:
+  url: http://repo.msys2.org/msys/sources/perl-Locale-Gettext-1.05-4.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '4'
+requirements:
+  run:
+  - m2-msys2-gettext
+  - m2-msys2-perl
+about:
+  home: http://search.cpan.org/dist/gettext/
+  license: GPL, PerlArtistic
+  summary: Permits access from Perl to the gettext() family of functions
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/perl-Locale-Gettext-1.05-4-i686.pkg.tar.xz
+      md5: cde0fc1f7e8420b9cab0d0f805b32173
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/perl-Locale-Gettext-1.05-4-x86_64.pkg.tar.xz
+      md5: d07adaa0adcf32a89f883d0ad12146fa
+      mv-src: '*'
+      mv-dst: Library/

@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-pkg-config
+  version: '0.28'
+source:
+  url: http://repo.msys2.org/msys/sources/pkg-config-0.28-2.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '2'
+requirements:
+  run:
+  - m2-msys2-glib2
+about:
+  home: http://pkgconfig.freedesktop.org/wiki/
+  license: GPL
+  summary: A system for managing library compile/link flags
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/pkg-config-0.28-2-i686.pkg.tar.xz
+      md5: 81bfe943c748e121c90e3b770012a5fc
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/pkg-config-0.28-2-x86_64.pkg.tar.xz
+      md5: f70b5c46de4021d50d03463c72cc4e9a
+      mv-src: '*'
+      mv-dst: Library/

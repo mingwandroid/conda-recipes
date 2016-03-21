@@ -1,0 +1,29 @@
+package:
+  name: m2-msys2-liblzma
+  version: 5.2.1
+source:
+  url: http://repo.msys2.org/msys/sources/liblzma-5.2.1-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-bash
+  - m2-msys2-libiconv
+  - m2-msys2-gettext
+about:
+  home: http://tukaani.org/xz/
+  license: GPL, LGPL, custom
+  summary: Library for XZ and LZMA compressed files
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/liblzma-5.2.1-1-i686.pkg.tar.xz
+      md5: e60100282bdb508a2e1a23c57e65c6d9
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/liblzma-5.2.1-1-x86_64.pkg.tar.xz
+      md5: 85bcd79fa8c17fe9bdbbc20bdb3ebb60
+      mv-src: '*'
+      mv-dst: Library/

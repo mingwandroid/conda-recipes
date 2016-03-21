@@ -1,0 +1,27 @@
+package:
+  name: m2-mingw-w64-gcc-ada
+  version: 5.3.0
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-gcc-ada-5.3.0-2.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '2'
+requirements:
+  run:
+  - m2-mingw-w64-gcc
+about:
+  home: http://gcc.gnu.org
+  license: GPL, LGPL, FDL, custom
+  summary: GNU Compiler Collection (Ada) for MinGW-w64
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-ada-5.3.0-2-any.pkg.tar.xz
+      md5: c4f1cb3799e62556f34d7cc230d5dff7
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-ada-5.3.0-2-any.pkg.tar.xz
+      md5: 88636684f0e0dbd9bfd05f24adb31625
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

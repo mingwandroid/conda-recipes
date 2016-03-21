@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-libopenssl
+  version: 1.0.2.g
+source:
+  url: http://repo.msys2.org/msys/sources/libopenssl-1.0.2.g-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-zlib
+about:
+  home: https://www.openssl.org
+  license: GPL (msys-2.0.dll linkage), custom:BSD
+  summary: The Open Source toolkit for Secure Sockets Layer and Transport Layer Security
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/libopenssl-1.0.2.g-1-i686.pkg.tar.xz
+      md5: 23e92afd99e0dfd78023d2844ce8945e
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/libopenssl-1.0.2.g-1-x86_64.pkg.tar.xz
+      md5: e03d981aa3069c2ba60313efceaa9319
+      mv-src: '*'
+      mv-dst: Library/

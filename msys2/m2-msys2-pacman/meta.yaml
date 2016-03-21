@@ -1,0 +1,36 @@
+package:
+  name: m2-msys2-pacman
+  version: 5.0.1.6391.cdeb8ff
+source:
+  url: http://repo.msys2.org/msys/sources/pacman-5.0.1.6391.cdeb8ff-1.src.tar.gz
+  md5: 5ddb164f84f93480b8f7962129356e9e
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-bash
+  - m2-msys2-gettext
+  - m2-msys2-gnupg
+  - m2-msys2-msys2-runtime
+  - m2-msys2-curl
+  - m2-msys2-pacman-mirrors
+  - m2-msys2-msys2-keyring
+  - m2-msys2-which
+  - m2-msys2-bzip2
+  - m2-msys2-xz
+about:
+  home: https://www.archlinux.org/pacman/
+  license: GPL
+  summary: A library-based package manager with dependency support (MSYS2 port)
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/pacman-5.0.1.6391.6f124b6-1-i686.pkg.tar.xz
+      md5: c017a7612dd5c958007cf4dd617b51b5
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/pacman-5.0.1.6391.cdeb8ff-1-x86_64.pkg.tar.xz
+      md5: 6728d4e4373b51eb0f7676170963ae24
+      mv-src: '*'
+      mv-dst: Library/

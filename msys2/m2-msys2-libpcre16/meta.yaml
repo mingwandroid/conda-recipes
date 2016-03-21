@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-libpcre16
+  version: '8.38'
+source:
+  url: http://repo.msys2.org/msys/sources/libpcre16-8.38-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-gcc-libs
+about:
+  home: http://www.pcre.org/
+  license: GPL (msys-2.0.dll linkage), BSD
+  summary: A library that implements Perl 5-style regular expressions
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/libpcre16-8.38-1-i686.pkg.tar.xz
+      md5: c54c9141e8bc96e7122ab545ce37a92f
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/libpcre16-8.38-1-x86_64.pkg.tar.xz
+      md5: 12327b0aa6e32bccf431386bc3e24572
+      mv-src: '*'
+      mv-dst: Library/

@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-libiconv
+  version: '1.14'
+source:
+  url: http://repo.msys2.org/msys/sources/libiconv-1.14-2.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '2'
+requirements:
+  run:
+  - m2-msys2-gcc-libs
+about:
+  home: http://www.gnu.org/software/libiconv/
+  license: GPL (msys-2.0.dll linkage), LGPL
+  summary: Libiconv is a conversion library
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/libiconv-1.14-2-i686.pkg.tar.xz
+      md5: 1077953d6ac197ab8aca06ca0ea71dd7
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/libiconv-1.14-2-x86_64.pkg.tar.xz
+      md5: dd29c251796896fda2e8da3beb71d7e9
+      mv-src: '*'
+      mv-dst: Library/

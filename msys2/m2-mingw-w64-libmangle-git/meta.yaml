@@ -1,0 +1,26 @@
+package:
+  name: m2-mingw-w64-libmangle-git
+  version: 5.0.0.4509.2e5a9a2
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-libmangle-git-5.0.0.4509.2e5a9a2-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run: []
+about:
+  home: http://mingw-w64.sourceforge.net
+  license: custom
+  summary: MinGW-w64 libmangle
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-libmangle-git-5.0.0.4509.2e5a9a2-1-any.pkg.tar.xz
+      md5: 29cc573d0a64ee2c6d5e2146bb4da648
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libmangle-git-5.0.0.4509.2e5a9a2-1-any.pkg.tar.xz
+      md5: 6f2574d723e780d56d64abf69458009f
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

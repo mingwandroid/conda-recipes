@@ -1,0 +1,32 @@
+package:
+  name: m2-msys2-man-db
+  version: 2.7.4
+source:
+  url: http://repo.msys2.org/msys/sources/man-db-2.7.4-1.src.tar.gz
+  md5: 032b798cd228fb2ae7ed86f74dc490d9
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-bash
+  - m2-msys2-gdbm
+  - m2-msys2-zlib
+  - m2-msys2-groff
+  - m2-msys2-libpipeline
+  - m2-msys2-less
+about:
+  home: http://www.nongnu.org/man-db/
+  license: GPL, LGPL
+  summary: A utility for reading man pages
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/man-db-2.7.4-1-i686.pkg.tar.xz
+      md5: 7aea08558ec86a2e2764733c17691fc4
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/man-db-2.7.4-1-x86_64.pkg.tar.xz
+      md5: 05ed7bd7bdad6d7a13b74a9d060676b1
+      mv-src: '*'
+      mv-dst: Library/

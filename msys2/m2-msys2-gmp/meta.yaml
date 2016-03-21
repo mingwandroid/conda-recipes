@@ -1,0 +1,26 @@
+package:
+  name: m2-msys2-gmp
+  version: 6.1.0
+source:
+  url: http://repo.msys2.org/msys/sources/gmp-6.1.0-1.src.tar.gz
+  md5: 1a3bb7aaa3d017ce06c6e0b1f4cefb38
+build:
+  number: '1'
+requirements:
+  run: []
+about:
+  home: http://gmplib.org/
+  license: GPL (msys-2.0.dll linkage), LGPL3
+  summary: A free library for arbitrary precision arithmetic
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/gmp-6.1.0-1-i686.pkg.tar.xz
+      md5: 67359253c2b3b0e3319a4301bffa9299
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/gmp-6.1.0-1-x86_64.pkg.tar.xz
+      md5: 6949a3eac7df17beba33436d1e622be6
+      mv-src: '*'
+      mv-dst: Library/

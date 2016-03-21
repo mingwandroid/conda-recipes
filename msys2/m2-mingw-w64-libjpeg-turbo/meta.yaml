@@ -1,0 +1,28 @@
+package:
+  name: m2-mingw-w64-libjpeg-turbo
+  version: 1.4.2
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-libjpeg-turbo-1.4.2-1.src.tar.gz
+  md5: 2836acbae088b6738d0d340cd22ffb6e
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-mingw-w64-gcc-libs
+about:
+  home: http://libjpeg-turbo.virtualgl.org
+  license: custom:BSD-like
+  summary: JPEG image codec with accelerated baseline compression and decompression
+    (mingw-w64)
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-libjpeg-turbo-1.4.2-1-any.pkg.tar.xz
+      md5: b8db2e573dc3a21ad390caab59b7bdbe
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libjpeg-turbo-1.4.2-1-any.pkg.tar.xz
+      md5: 5413f8d0f14f887b8608effc4aca50ae
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

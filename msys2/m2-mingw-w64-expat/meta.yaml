@@ -1,0 +1,26 @@
+package:
+  name: m2-mingw-w64-expat
+  version: 2.1.1
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-expat-2.1.1-1.src.tar.gz
+  md5: 2d7b0130afa2789a55240c1fd1899dcd
+build:
+  number: '1'
+requirements:
+  run: []
+about:
+  home: http://expat.sourceforge.net
+  license: MIT
+  summary: An XML parser library (mingw-w64)
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-expat-2.1.1-1-any.pkg.tar.xz
+      md5: b3a61ff61f0ee1433844d3fd81d04239
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-expat-2.1.1-1-any.pkg.tar.xz
+      md5: 9a2ddc79dbf20ee75db64b6cc9c7792c
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

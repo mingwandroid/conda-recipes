@@ -1,0 +1,29 @@
+package:
+  name: m2-msys2-perl-xml-parser
+  version: '2.44'
+source:
+  url: http://repo.msys2.org/msys/sources/perl-XML-Parser-2.44-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-perl
+  - m2-msys2-libexpat
+  - m2-msys2-libcrypt
+about:
+  home: http://search.cpan.org/dist/XML-Parser/
+  license: GPL, PerlArtistic
+  summary: Expat-based XML parser module for perl
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/perl-XML-Parser-2.44-1-i686.pkg.tar.xz
+      md5: 7b28122d19238dc1ebfdb01498d9afff
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/perl-XML-Parser-2.44-1-x86_64.pkg.tar.xz
+      md5: a5e48df08cf123bfae3288bb176b90a0
+      mv-src: '*'
+      mv-dst: Library/

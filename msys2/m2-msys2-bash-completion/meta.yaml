@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-bash-completion
+  version: '2.1'
+source:
+  url: http://repo.msys2.org/msys/sources/bash-completion-2.1-6.src.tar.gz
+  md5: 504f2cca9a026ae1c90dbf157b434738
+build:
+  number: '6'
+requirements:
+  run:
+  - m2-msys2-bash
+about:
+  home: http://bash-completion.alioth.debian.org/
+  license: GPL
+  summary: Programmable completion for the bash shell
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/bash-completion-2.1-6-any.pkg.tar.xz
+      md5: 43281aa29f38d56cdbc9eb4ad9aba484
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/bash-completion-2.1-6-any.pkg.tar.xz
+      md5: df79e3447039471bc994b4a2bb17c23f
+      mv-src: '*'
+      mv-dst: Library/

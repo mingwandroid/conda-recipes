@@ -1,0 +1,28 @@
+package:
+  name: m2-msys2-gperf
+  version: 3.0.4
+source:
+  url: http://repo.msys2.org/msys/sources/gperf-3.0.4-3.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '3'
+requirements:
+  run:
+  - m2-msys2-gcc-libs
+  - m2-msys2-info
+about:
+  home: http://www.gnu.org/software/gperf/
+  license: GPL (msys-2.0.dll linkage), GPL3
+  summary: Perfect hash function generator
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/gperf-3.0.4-3-i686.pkg.tar.xz
+      md5: f1e4bb296444838c7399d48c739b738e
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/gperf-3.0.4-3-x86_64.pkg.tar.xz
+      md5: e849e28935e7612ab2747bdb2ba7f62a
+      mv-src: '*'
+      mv-dst: Library/

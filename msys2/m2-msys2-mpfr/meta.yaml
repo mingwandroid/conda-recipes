@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-mpfr
+  version: 3.1.3.p0
+source:
+  url: http://repo.msys2.org/msys/sources/mpfr-3.1.3.p0-1.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-gmp
+about:
+  home: http://www.mpfr.org/
+  license: GPL (msys-2.0.dll linkage), LGPL
+  summary: Multiple-precision floating-point library
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/mpfr-3.1.3.p0-1-i686.pkg.tar.xz
+      md5: e0b681e8bf469f164e4253e391ad064b
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/mpfr-3.1.3.p0-1-x86_64.pkg.tar.xz
+      md5: b599953896db6a58c1832e27c58799a7
+      mv-src: '*'
+      mv-dst: Library/

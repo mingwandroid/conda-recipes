@@ -1,0 +1,22 @@
+package:
+  name: m2-mingw-w64-toolchain
+  version: 5.3.0
+build:
+  number: '2'
+requirements:
+  run:
+  - m2-mingw-w64-binutils
+  - m2-mingw-w64-crt-git
+  - m2-mingw-w64-gcc
+  - m2-mingw-w64-gcc-ada
+  - m2-mingw-w64-gcc-fortran
+  - m2-mingw-w64-gcc-libgfortran
+  - m2-mingw-w64-gcc-libs
+  - m2-mingw-w64-gcc-objc
+  - m2-mingw-w64-headers-git
+  - m2-mingw-w64-libmangle-git
+  - m2-mingw-w64-libwinpthread-git
+  - m2-mingw-w64-make
+  - m2-mingw-w64-pkg-config
+  - m2-mingw-w64-tools-git
+  - m2-mingw-w64-winpthreads-git

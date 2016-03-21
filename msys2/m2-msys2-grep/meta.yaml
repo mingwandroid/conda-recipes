@@ -1,0 +1,30 @@
+package:
+  name: m2-msys2-grep
+  version: '2.24'
+source:
+  url: http://repo.msys2.org/msys/sources/grep-2.24-1.src.tar.gz
+  md5: 39b857eabd3e21241645eff4e674f3ec
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-libiconv
+  - m2-msys2-libintl
+  - m2-msys2-libpcre
+  - m2-msys2-bash
+about:
+  home: https://www.gnu.org/software/grep/grep.html
+  license: GPL (msys-2.0.dll linkage), GPL3
+  summary: A string search utility
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/grep-2.24-1-i686.pkg.tar.xz
+      md5: 820cb7babc7effe542d0332f514a59fe
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/grep-2.24-1-x86_64.pkg.tar.xz
+      md5: 6a874b7499fb7ab97868b71be4c81e72
+      mv-src: '*'
+      mv-dst: Library/

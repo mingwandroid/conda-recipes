@@ -1,0 +1,26 @@
+package:
+  name: m2-msys2-msys2-runtime
+  version: 2.5.0.16933.bc14e45
+source:
+  url: http://repo.msys2.org/msys/sources/msys2-runtime-2.5.0.16933.bc14e45-1.src.tar.gz
+  md5: 362187e9ee9bb28b3a4b0350957cf528
+build:
+  number: '1'
+requirements:
+  run: []
+about:
+  home: null
+  license: GPL
+  summary: Posix emulation engine for Windows
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/msys2-runtime-2.5.0.16933.ff9934a-1-i686.pkg.tar.xz
+      md5: e103221bcbb885749518bf988c45ef6a
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/msys2-runtime-2.5.0.16933.bc14e45-1-x86_64.pkg.tar.xz
+      md5: 8560a157f9ac41fde680490c068ecadd
+      mv-src: '*'
+      mv-dst: Library/

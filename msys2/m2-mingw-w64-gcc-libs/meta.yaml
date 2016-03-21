@@ -1,0 +1,28 @@
+package:
+  name: m2-mingw-w64-gcc-libs
+  version: 5.3.0
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-gcc-libs-5.3.0-4.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
+build:
+  number: '4'
+requirements:
+  run:
+  - m2-mingw-w64-gmp
+  - m2-mingw-w64-libwinpthread-git
+about:
+  home: https://gcc.gnu.org
+  license: GPL3+, partial:GCCRLE, partial:LGPL2+
+  summary: GNU Compiler Collection (libraries) for MinGW-w64
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-libs-5.3.0-4-any.pkg.tar.xz
+      md5: 6aa06e41aaa8f4c35c742c6ac912da3a
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-libs-5.3.0-4-any.pkg.tar.xz
+      md5: a6b9031ee3f6f1a641e7bd7ba366871f
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

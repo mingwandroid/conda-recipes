@@ -1,0 +1,31 @@
+package:
+  name: m2-msys2-heimdal-libs
+  version: 1.5.3
+source:
+  url: http://repo.msys2.org/msys/sources/heimdal-libs-1.5.3-9.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '9'
+requirements:
+  run:
+  - m2-msys2-libdb
+  - m2-msys2-libcrypt
+  - m2-msys2-libedit
+  - m2-msys2-libsqlite
+  - m2-msys2-libopenssl
+about:
+  home: https://www.h5l.org/
+  license: GPL (msys-2.0.dll linkage), custom
+  summary: Implementation of Kerberos V5 libraries
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/heimdal-libs-1.5.3-9-i686.pkg.tar.xz
+      md5: a49d302e3977e95e03ecf7c20f95cffc
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/heimdal-libs-1.5.3-9-x86_64.pkg.tar.xz
+      md5: 91bd789a65fe4262be671fa22bf97a68
+      mv-src: '*'
+      mv-dst: Library/

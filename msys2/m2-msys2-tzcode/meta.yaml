@@ -1,0 +1,29 @@
+package:
+  name: m2-msys2-tzcode
+  version: 2015.e
+source:
+  url: http://repo.msys2.org/msys/sources/tzcode-2015.e-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-coreutils
+  - m2-msys2-gawk
+  - m2-msys2-sed
+about:
+  home: http://www.iana.org/time-zones
+  license: GPL
+  summary: Sources for time zone and daylight saving time data
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/tzcode-2015.e-1-i686.pkg.tar.xz
+      md5: 33304239bb680bcc588142326dc6cf80
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/tzcode-2015.e-1-x86_64.pkg.tar.xz
+      md5: c8e79f8d6a9015bf97b75e8ad0337809
+      mv-src: '*'
+      mv-dst: Library/

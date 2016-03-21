@@ -1,0 +1,32 @@
+package:
+  name: m2-msys2-inetutils
+  version: 1.9.2
+source:
+  url: http://repo.msys2.org/msys/sources/inetutils-1.9.2-1.src.tar.gz
+  md5: baadc0debaadc0debaadc0debaadc0de
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-gcc-libs
+  - m2-msys2-libintl
+  - m2-msys2-libcrypt
+  - m2-msys2-libreadline
+  - m2-msys2-ncurses
+  - m2-msys2-tftp-hpa
+about:
+  home: http://www.gnu.org/software/inetutils/
+  license: GPL (msys-2.0.dll linkage), GPL3
+  summary: A collection of common network programs.
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/inetutils-1.9.2-1-i686.pkg.tar.xz
+      md5: cf2841112f87bf287af8894de2713ac6
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/inetutils-1.9.2-1-x86_64.pkg.tar.xz
+      md5: f9ed2f125e4182b16d458195f91b84f1
+      mv-src: '*'
+      mv-dst: Library/

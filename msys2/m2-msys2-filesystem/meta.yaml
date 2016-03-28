@@ -17,10 +17,16 @@ extra:
     win-32:
       url: http://repo.msys2.org/msys/i686/filesystem-2015.04-3-i686.pkg.tar.xz
       md5: e5b359db157a47ec4e4aef0efdd9c8ab
+      patches:
+      - 0001-Remove-etc-post-install-07-pacman-key-post.patch
+      - 0002-Use-Windows-users-temporary-directory-as-tmp.patch
       mv-src: '*'
       mv-dst: Library/
     win-64:
       url: http://repo.msys2.org/msys/x86_64/filesystem-2015.04-3-x86_64.pkg.tar.xz
       md5: 641daf0c7d036d786803425a14f06bb2
+      patches:
+      - 0001-Remove-etc-post-install-07-pacman-key-post.patch
+      - 0002-Use-Windows-users-temporary-directory-as-tmp.patch
       mv-src: '*'
       mv-dst: Library/

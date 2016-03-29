@@ -1,9 +1,9 @@
 package:
   name: m2-msys2-msys2-runtime
-  version: 2.5.0.16933.bc14e45
+  version: 2.5.0.17040.9d5d874
 source:
-  url: http://repo.msys2.org/msys/sources/msys2-runtime-2.5.0.16933.bc14e45-1.src.tar.gz
-  md5: 362187e9ee9bb28b3a4b0350957cf528
+  url: http://repo.msys2.org/msys/sources/msys2-runtime-2.5.0.17040.9d5d874-1.src.tar.gz
+  md5: 8b02daf19d33256934ec5ef66773c22d
 build:
   number: '1'
 requirements:
@@ -15,12 +15,12 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/msys2-runtime-2.5.0.16933.ff9934a-1-i686.pkg.tar.xz
-      md5: e103221bcbb885749518bf988c45ef6a
+      url: http://repo.msys2.org/msys/i686/msys2-runtime-2.5.0.17040.b522188-1-i686.pkg.tar.xz
+      md5: f0f8fb430334cd7daf40e8a978745e1a
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/msys2-runtime-2.5.0.16933.bc14e45-1-x86_64.pkg.tar.xz
-      md5: 8560a157f9ac41fde680490c068ecadd
+      url: http://repo.msys2.org/msys/x86_64/msys2-runtime-2.5.0.17040.9d5d874-1-x86_64.pkg.tar.xz
+      md5: 119d3f41bea9419f9749f723aefa9b3e
       mv-src: '*'
       mv-dst: Library/

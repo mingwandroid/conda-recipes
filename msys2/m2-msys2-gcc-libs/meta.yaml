@@ -1,11 +1,11 @@
 package:
   name: m2-msys2-gcc-libs
-  version: 4.9.2
+  version: 5.3.0
 source:
-  url: http://repo.msys2.org/msys/sources/gcc-libs-4.9.2-6.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/msys/sources/gcc-libs-5.3.0-1.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
-  number: '6'
+  number: '1'
 requirements:
   run:
   - m2-msys2-msys2-runtime
@@ -16,12 +16,12 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/gcc-libs-4.9.2-6-i686.pkg.tar.xz
-      md5: f97b9eb4c24da77dd3b0c1619ee1f709
+      url: http://repo.msys2.org/msys/i686/gcc-libs-5.3.0-1-i686.pkg.tar.xz
+      md5: 8b570d137de6dcec7c30b34b81ac334b
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/gcc-libs-4.9.2-6-x86_64.pkg.tar.xz
-      md5: 90081e0c700c2a22a449c20f936be92e
+      url: http://repo.msys2.org/msys/x86_64/gcc-libs-5.3.0-1-x86_64.pkg.tar.xz
+      md5: bf27045ff4a4d9199de11b81cb6a5719
       mv-src: '*'
       mv-dst: Library/

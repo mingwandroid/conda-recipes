@@ -84,9 +84,27 @@ Mingw_w64_autotools() {
 
 # Use the hand-crafted makefiles.
 Mingw_w64_makefiles() {
+    # Instead of copying a MkRules.dist file to MkRules.local
+    # just create one with the options we know our toolchains
+    # support, and don't set any
     if [[ "${ARCH}" == "64" ]]; then
-        export CPPFLAGS="$CPPFLAGS -DWIN=64 -DMULTI=64"
+        CPU="x86-64"
+    else
+        CPU="i686"
     fi
+    echo "LEA_MALLOC = YES"                      > "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "BINPREF = "                           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "BINPREF64 = "                         >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "USE_ATLAS = NO"                       >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "BUILD_HTML = NO"                      >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "WIN = ${ARCH}"                        >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "EOPTS = -march=${CPU} -mtune=generic" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "OPENMP = -fopenmp"                    >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "PTHREAD = -pthread"                   >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "COPY_RUNTIME_DLLS = 1"                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "MAKEINFO = makeinfo"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "TCL_VERSION = 86"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+
     cd "${SRC_DIR}/src/gnuwin32"
     make distribution
     cd installer

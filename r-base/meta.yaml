@@ -14,6 +14,8 @@ source:
     - mac-unicode.patch # [osx]
     - 0001-Win32-Stop-confusing-PECOFF_SHLIBS-with-CYGWIN_BUILD.patch
     - 0002-Win32-Fix-trio-config-h-include-depth-issue.patch
+    - 0003-Win32-Do-not-static-libgcc-link.patch
+    - 0004-Win32-Use-TCL_VERSION_86.patch
 
 build:
   rpaths:
@@ -24,6 +26,7 @@ build:
 requirements:
   build:
     - m2-msys2-base        # [win]
+    - m2-msys2-texinfo-tex # [win]
     - readline             # [not win]
     - ncurses              # [not win]
     - cairo                # [linux]

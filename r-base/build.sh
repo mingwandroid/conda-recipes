@@ -212,9 +212,10 @@ Mingw_w64_makefiles() {
     fi
 
     cd "${SRC_DIR}/src/gnuwin32"
-    make distribution -j${CPU_COUNT} > make_distribution.log 2>&1
+    make distribution -j${CPU_COUNT} IMAGEDIR=R-3.2.4 > make_distribution.log 2>&1
+    make check-all
     cd installer
-    make imagedir
+    make imagedir IMAGEDIR=R-3.2.4
     cp -rf R-3.2.4 "${PREFIX}"/R
 }
 

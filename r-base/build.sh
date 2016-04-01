@@ -157,13 +157,14 @@ Mingw_w64_makefiles() {
     #
     # Server doesn't support byte ranges, hence the || true
     curl -C - -o ${DLCACHE}/Rtools33.exe -SLO http://cran.r-project.org/bin/windows/Rtools/Rtools33.exe || true
-    ./innoextract.exe ${DLCACHE}/Rtools33.exe
     if [[ "${ARCH}" == "64" ]]; then
+        ./innoextract.exe -I "code\$rhome64" ${DLCACHE}/Rtools33.exe
         mv "code\$rhome64/Tcl" "${SRC_DIR}"
     else
+        ./innoextract.exe -I "code\$rhome" ${DLCACHE}/Rtools33.exe
         mv "code\$rhome/Tcl" "${SRC_DIR}"
     fi
-    exit 1
+
     # Horrible. We need MiKTeX or something like it (for pdflatex.exe. Building from source
     # may be posslbe but requires CLisp and I've not got time for that at present).  w32tex
     # looks a little less horrible than MiKTex (just read their build instructions and cry:

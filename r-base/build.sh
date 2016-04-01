@@ -98,6 +98,13 @@ Mingw_w64_makefiles() {
     else
         CPU="i686"
     fi
+
+    # I want to use /tmp and have that mounted to Windows %TEMP% in Conda's MSYS2
+    # but there's a permissions issue preventing that from working at present.
+    # DLCACHE=/tmp
+    DLCACHE=/c/Users/${USER}/Downloads
+    [[ -d $DLCACHE ]] || mkdir -p $DLCACHE
+
     echo "LEA_MALLOC = YES"                      > "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "BINPREF = "                           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "BINPREF64 = "                         >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
@@ -112,16 +119,16 @@ Mingw_w64_makefiles() {
     echo "TCL_VERSION = 86"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "ISDIR = ${PWD}/isdir"                 >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
 
+    set -e
     # The build process copies this across if it finds it and rummaging about on
     # the website I found a file, so why not, eh?
-    mkdir "${SRC_DIR}/etc"
-    curl -c "${SRC_DIR}/etc/curl-ca-bundle.crt" -SLO https://www.stats.ox.ac.uk/pub/Rtools/goodies/multilib/curl-ca-bundle.crt
+    curl -c "${SRC_DIR}/etc/curl-ca-bundle.crt" -SLO http://www.stats.ox.ac.uk/pub/Rtools/goodies/multilib/curl-ca-bundle.crt
 
     # The hoops we must jump through to get innosetup installed in an unattended way.
-    curl -c innoextract-1.6-windows.zip -SLO http://constexpr.org/innoextract/files/innoextract-1.6/innoextract-1.6-windows.zip
-    unzip -o innoextract-1.6-windows.zip
-    curl -c isetup-5.5.8-unicode.exe -SLO http://files.jrsoftware.org/is/5/isetup-5.5.8-unicode.exe
-    ./innoextract.exe ./isetup-5.5.8-unicode.exe
+    curl -c ${DLCACHE}/innoextract-1.6-windows.zip -SLO http://constexpr.org/innoextract/files/innoextract-1.6/innoextract-1.6-windows.zip
+    unzip -o ${DLCACHE}/innoextract-1.6-windows.zip -d ${PWD}
+    curl -c ${DLCACHE}/isetup-5.5.8-unicode.exe -SLO http://files.jrsoftware.org/is/5/isetup-5.5.8-unicode.exe
+    ./innoextract.exe ${DLCACHE}/isetup-5.5.8-unicode.exe
     mv app isdir
 
     # I wanted to go for the following unusual approach here of using conda install (in copy mode)
@@ -147,14 +154,14 @@ Mingw_w64_makefiles() {
     #
     # .. instead, more innoextract for now.
     #
-    curl -c Rtools33.exe -SLO https://cran.r-project.org/bin/windows/Rtools/Rtools33.exe
-    ./innoextract.exe Rtools33.exe
+    curl -c ${DLCACHE}/Rtools33.exe -SLO http://cran.r-project.org/bin/windows/Rtools/Rtools33.exe
+    ./innoextract.exe ${DLCACHE}/Rtools33.exe
     if [[ "${ARCH}" == "64" ]]; then
         mv "code\$rhome64/Tcl" "${SRC_DIR}"
     else
         mv "code\$rhome/Tcl" "${SRC_DIR}"
     fi
-
+    exit 1
     # Horrible. We need MiKTeX or something like it (for pdflatex.exe. Building from source
     # may be posslbe but requires CLisp and I've not got time for that at present).  w32tex
     # looks a little less horrible than MiKTex (just read their build instructions and cry:
@@ -163,8 +170,6 @@ Mingw_w64_makefiles() {
     # Hint: install all packages, or be prepared to install missing packages later, when
     #       CMake fails to find them...
     # So, let's try with standard w32tex instead: http://w32tex.org/
-    # I wanted to use /tmp/w32tex here but am getting permissions errors trying to execute
-    # texinst2016.exe .. need to investigate how I am mounting my temp dir.
 
     # W32TeX doesn't have inconsolata.sty which is
     # needed for R 3.2.4 (later Rs have switched to zi4
@@ -193,9 +198,9 @@ Mingw_w64_makefiles() {
     else
       mkdir miktex || true
       pushd miktex
-        curl -c miktex-portable-2.9.5857.exe -SLO http://mirrors.ctan.org/systems/win32/miktex/setup/miktex-portable-2.9.5857.exe
+        curl -c ${DLCACHE}/miktex-portable-2.9.5857.exe -SLO http://mirrors.ctan.org/systems/win32/miktex/setup/miktex-portable-2.9.5857.exe
         echo "Extracting miktex-portable-2.9.5857.exe, this will take some time ..."
-        7za x -y miktex-portable-2.9.5857.exe > /dev/null
+        7za x -y ${DLCACHE}/miktex-portable-2.9.5857.exe > /dev/null
         # We also need the url, incolsolata and mptopdf packages and
         # do not want a GUI to prompt us about installing these.
         sed -i 's|AutoInstall=2|AutoInstall=1|g' miktex/config/miktex.ini

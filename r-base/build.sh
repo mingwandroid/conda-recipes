@@ -110,7 +110,7 @@ Mingw_w64_makefiles() {
     echo "COPY_RUNTIME_DLLS = 1"                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "TEXI2ANY = texi2any"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "TCL_VERSION = 86"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "ISDIR = isdir"                        >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "ISDIR = ${PWD}/isdir"                 >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
 
     # The build process copies this across if it finds it and rummaging about on
     # the website I found a file, so why not, eh?
@@ -118,26 +118,42 @@ Mingw_w64_makefiles() {
     curl -c "${SRC_DIR}/etc/curl-ca-bundle.crt" -SLO https://www.stats.ox.ac.uk/pub/Rtools/goodies/multilib/curl-ca-bundle.crt
 
     # The hoops we must jump through to get innosetup installed in an unattended way.
-    curl -c innoextract-1.6-windows.zip http://constexpr.org/innoextract/files/innoextract-1.6/innoextract-1.6-windows.zip
+    curl -c innoextract-1.6-windows.zip -SLO http://constexpr.org/innoextract/files/innoextract-1.6/innoextract-1.6-windows.zip
     unzip -o innoextract-1.6-windows.zip
     curl -c isetup-5.5.8-unicode.exe -SLO http://files.jrsoftware.org/is/5/isetup-5.5.8-unicode.exe
     ./innoextract.exe ./isetup-5.5.8-unicode.exe
     mv app isdir
 
-    # RTools33.exe installs an ActiveState TCL in C:/R64. I'll call this ASTCL from now on.
-
-    # tktable, bwidget and tcl/lib need to be copied into Tcl.
-    mkdir -p "${SRC_DIR}/Tcl"
-
-    # In ASTCL, this is located at ${SRC_DIR}/Tcl/lib/BWidget (unversioned)
-    #cp -Rf ${PREFIX}/Library/mingw-w64/lib/bwidget* ${SRC_DIR}/Tcl/lib/
-    # In ASTCL, this is located at ${SRC_DIR}/Tcl/lib64/Tktable (unversioned)
-    #cp -Rf ${PREFIX}/Library/mingw-w64/lib/Tktable* ${SRC_DIR}/Tcl/lib/
-    # In ASTCL, there are also dde1.3 and reg1.2 folders in lib64.
-
-    # We're going for a fairly unusual approach here, I know, but it should be fine
-    # since the DLL dependencies have already been installed and will be on the path.
-    conda install --no-deps --copy --prefix "${SRC_DIR}/Tcl" m2-mingw-w64-tcl m2-mingw-w64-tk m2-mingw-w64-bwidget m2-mingw-w64-tktable
+    # I wanted to go for the following unusual approach here of using conda install (in copy mode)
+    # and using MSYS2's mingw-w64 tcl/tk packages, but this is something for longer-term as there
+    # is too much work to do around removing baked-in paths and logic around the ActiveState TCL.
+    # For example expectations of Tcl/{bin,lib}64 folders in src/gnuwin32/installer/JRins.R and
+    # other places I've not yet found.
+    #
+    # Plan was to install excluding the dependencies (so the necessary DLL dependencies will not
+    # be present!). This should not matter since the DLL dependencies have already been installed
+    # when r-base itself was installed and will be on the PATH already. The alternative to this
+    # is to patch R so that it doesn't look for Tcl executables in in Tcl/bin or Tcl/bin64 and
+    # instead looks in the same folder as the R executable which would be my prefered approach.
+    # mkdir -p "${SRC_DIR}/Tcl"
+    # conda install -c https://conda.anaconda.org/rdonnelly \
+    #               --no-deps --yes --copy --prefix "${SRC_DIR}/Tcl" \
+    #               m2-mingw-w64-{tcl,tk,bwidget,tktable}
+    # mv "${SRC_DIR}"/Tcl/Library/mingw-w64/* "${SRC_DIR}"/Tcl/
+    # rm -Rf "${SRC_DIR}"/Tcl/{Library,conda-meta,.BUILDINFO,.MTREE,.PKGINFO}
+    # if [[ "${ARCH}" == "64" ]]; then
+    #     mv "${SRC_DIR}/Tcl/bin" "${SRC_DIR}/Tcl/bin64"
+    # fi
+    #
+    # .. instead, more innoextract for now.
+    #
+    curl -c Rtools33.exe -SLO https://cran.r-project.org/bin/windows/Rtools/Rtools33.exe
+    ./innoextract.exe Rtools33.exe
+    if [[ "${ARCH}" == "64" ]]; then
+        mv "code\$rhome64/Tcl" "${SRC_DIR}"
+    else
+        mv "code\$rhome/Tcl" "${SRC_DIR}"
+    fi
 
     # Horrible. We need MiKTeX or something like it (for pdflatex.exe. Building from source
     # may be posslbe but requires CLisp and I've not got time for that at present).  w32tex
@@ -188,7 +204,7 @@ Mingw_w64_makefiles() {
     fi
 
     cd "${SRC_DIR}/src/gnuwin32"
-    make distribution -j${CPU_COUNT}
+    make distribution -j${CPU_COUNT} > make_distribution.log 2>&1
     cd installer
     make imagedir
     cp -rf R-3.2.4 "${PREFIX}"/R

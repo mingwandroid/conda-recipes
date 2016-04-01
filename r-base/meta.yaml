@@ -3,12 +3,12 @@
 package:
   name: r # [win]
   name: r-base # [not win]
-  version: 3.2.2
+  version: 3.2.4
 
 source:
-  fn: R-3.2.2.tar.gz
-  url: http://cran.cnr.berkeley.edu/src/base/R-3/R-3.2.2.tar.gz
-  sha1: 68c74db1c5a2f2040280a03b8396e4d28a5a7617
+  fn: R-3.2.4-revised.tar.gz
+  url: http://cran.cnr.berkeley.edu/src/base/R-3/R-3.2.4-revised.tar.gz
+  sha1: 54d8b02b4564655f1be84b4a830813f8452b5e9c
   patches:
     - share-make-vars.mk.patch
     - mac-unicode.patch # [osx]
@@ -27,6 +27,12 @@ requirements:
   build:
     - m2-msys2-base        # [win]
     - m2-msys2-texinfo-tex # [win]
+    - m2-msys2-texinfo     # [win]
+    - m2-msys2-curl        # [win]
+    - m2-msys2-zip         # [win]
+    - m2-msys2-unzip       # [win]
+    - m2-msys2-p7zip       # [win]
+    - m2-msys2-tar         # [win]
     - readline             # [not win]
     - ncurses              # [not win]
     - cairo                # [linux]
@@ -43,6 +49,8 @@ requirements:
     - {{pfx}}xz            # [win]
     - {{pfx}}mpfr          # [win]
     - {{pfx}}libsndfile    # [win]
+    - {{pfx}}bwidget       # [win]
+    - {{pfx}}tktable       # [win]
     - {{pfx}}tk
     - {{pfx}}zlib
     - {{pfx}}gsl

@@ -201,7 +201,7 @@ Mingw_w64_makefiles() {
     else
       mkdir miktex || true
       pushd miktex
-        curl -C - -o ${DLCACHE}/miktex-portable-2.9.5857.exe -SLO http://mirrors.ctan.org/systems/win32/miktex/setup/miktex-portable-2.9.5857.exe
+        curl -C - -o ${DLCACHE}/miktex-portable-2.9.5857.exe -SLO http://mirrors.ctan.org/systems/win32/miktex/setup/miktex-portable-2.9.5857.exe || true
         echo "Extracting miktex-portable-2.9.5857.exe, this will take some time ..."
         7za x -y ${DLCACHE}/miktex-portable-2.9.5857.exe > /dev/null
         # We also need the url, incolsolata and mptopdf packages and

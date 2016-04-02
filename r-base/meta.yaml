@@ -14,8 +14,9 @@ source:
     - mac-unicode.patch # [osx]
     - 0001-Win32-Stop-confusing-PECOFF_SHLIBS-with-CYGWIN_BUILD.patch
     - 0002-Win32-Fix-trio-config-h-include-depth-issue.patch
-    - 0003-Win32-Do-not-static-libgcc-link.patch
-    - 0004-Win32-Use-TCL_VERSION_86.patch
+    - 0003-Win32-Do-not-static-libgcc-link.patch              # This patch is only correct if using MSYS2's tcltk.
+    - 0004-Win32-Use-TCL_VERSION_86.patch                     # This patch is only correct if using MSYS2's tcltk.
+    - 0005-Win32-Extend-sqrt-NA_real_-hack-to-all-GCC-versions.patch
 
 build:
   rpaths:
@@ -51,7 +52,8 @@ requirements:
     - {{pfx}}libsndfile    # [win]
     - {{pfx}}bwidget       # [win]
     - {{pfx}}tktable       # [win]
-    - {{pfx}}tk
+    - {{pfx}}tk            # [win]
+    - tk                   # [not win]
     - {{pfx}}zlib
     - {{pfx}}gsl
     - {{pfx}}libpng
@@ -62,7 +64,6 @@ requirements:
   run:
     - readline             # [not win]
     - ncurses              # [not win]
-    - tk                   # [not win]
     - cairo                # [linux]
     - pango                # [linux]
     - {{pfx}}libgcc
@@ -77,7 +78,10 @@ requirements:
     - {{pfx}}xz            # [win]
     - {{pfx}}mpfr          # [win]
     - {{pfx}}sndfile       # [win]
-    - {{pfx}}tk
+    - {{pfx}}bwidget       # [win]
+    - {{pfx}}tktable       # [win]
+    - {{pfx}}tk            # [win]
+    - tk                   # [not win]
     - {{pfx}}zlib
     - {{pfx}}gsl
     - {{pfx}}libpng

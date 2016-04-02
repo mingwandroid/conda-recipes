@@ -30,15 +30,15 @@ Linux() {
 
     mkdir -p $PREFIX/lib
 
-    ./configure --prefix=$PREFIX                \
+    ./configure --prefix=${PREFIX}              \
                 --enable-shared                 \
                 --enable-R-shlib                \
                 --enable-BLAS-shlib             \
                 --disable-R-profiling           \
                 --disable-prebuilt-html         \
                 --disable-memory-profiling      \
-                --with-tk-config=$TK_CONFIG     \
-                --with-tcl-config=$TCL_CONFIG   \
+                --with-tk-config=${TK_CONFIG}   \
+                --with-tcl-config=${TCL_CONFIG} \
                 --with-x                        \
                 --with-pic                      \
                 --with-cairo                    \
@@ -64,7 +64,7 @@ Mingw_w64_autotools() {
         echo warning: JDK_HOME and JAVA_HOME not set
     fi
 
-    mkdir -p $PREFIX/lib
+    mkdir -p ${PREFIX}/lib
     export TCL_CONFIG=$PREFIX/Library/mingw-w64/lib/tclConfig.sh
     export TK_CONFIG=$PREFIX/Library/mingw-w64/lib/tkConfig.sh
     export TCL_LIBRARY=$PREFIX/Library/mingw-w64/lib/tcl8.6
@@ -94,8 +94,16 @@ Mingw_w64_autotools() {
 
 # Use the hand-crafted makefiles.
 Mingw_w64_makefiles() {
-    local _use_msys2_mingw_w64_tcltk=no
+    local _use_msys2_mingw_w64_tcltk=yes
     local _use_w32tex=no
+
+    # Just for now while boxplot causes 'Illegal instruction'
+    export CFLAGS="-I${PREFIX}/include -O0 -ggdb"
+    export CPPFLAGS="-I${PREFIX}/include -O0 -ggdb"
+    export FFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -O0 -ggdb"
+    export FCFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -O0 -ggdb"
+    export OBJCFLAGS="-I${PREFIX}/include -O0 -ggdb"
+    export CXXFLAGS="-I${PREFIX}/include -O0 -ggdb"
 
     # Instead of copying a MkRules.dist file to MkRules.local
     # just create one with the options we know our toolchains
@@ -110,6 +118,12 @@ Mingw_w64_makefiles() {
         TCLTK_VER=86
     else
         TCLTK_VER=85
+        # Linking directly to DLLs, yuck.
+        if [[ "${ARCH}" == "64" ]]; then
+            export LDFLAGS="${LDFLAGS} -L${PREFIX}/Tcl/bin64"
+        else
+            export LDFLAGS="${LDFLAGS} -L${PREFIX}/Tcl/bin"
+        fi
     fi
 
     # I want to use /tmp and have that mounted to Windows %TEMP% in Conda's MSYS2
@@ -131,6 +145,7 @@ Mingw_w64_makefiles() {
     echo "TEXI2ANY = texi2any"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "TCL_VERSION = ${TCLTK_VER}"           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "ISDIR = ${PWD}/isdir"                 >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "DEBUG = 1"                            >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
 
     set -e
     # The build process copies this across if it finds it and rummaging about on
@@ -168,7 +183,10 @@ Mingw_w64_makefiles() {
         fi
     else
         #
-        # .. instead, more innoextract for now.
+        # .. instead, more innoextract for now. We can probably use these archives instead:
+        # http://www.stats.ox.ac.uk/pub/Rtools/R_Tcl_8-5-8.zip
+        # http://www.stats.ox.ac.uk/pub/Rtools/R_Tcl_8-5-8.zip
+        # as noted on http://www.stats.ox.ac.uk/pub/Rtools/R215x.html.
         #
         # curl claims most servers do not support byte ranges, hence the || true
         curl -C - -o ${DLCACHE}/Rtools33.exe -SLO http://cran.r-project.org/bin/windows/Rtools/Rtools33.exe || true
@@ -227,7 +245,16 @@ Mingw_w64_makefiles() {
     fi
 
     cd "${SRC_DIR}/src/gnuwin32"
-    make distribution -j${CPU_COUNT} IMAGEDIR=R-3.2.4 > make_distribution.log 2>&1
+    if [[ "${_use_msys2_mingw_w64_tcltk}" == "yes" ]]; then
+        # rinstaller and crandir would come after manuals (if it worked with MSYS2/mingw-w64-{tcl,tk}, in which case we'd just use make distribution anyway)
+        echo "***** Build started *****" > make_staged.log
+        for _stage in all cairodevices recommended vignettes manuals; do
+            echo "***** Stage started ${_stage} *****" >> make_staged.log
+            make ${_stage} -j${CPU_COUNT} IMAGEDIR=R-3.2.4 >> make_staged.log 2>&1
+        done
+    else
+        make distribution -j${CPU_COUNT} IMAGEDIR=R-3.2.4 > make_distribution.log 2>&1
+    fi
     echo "Running make check-all, this will take some time ..."
     make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     cd installer

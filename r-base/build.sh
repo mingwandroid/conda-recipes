@@ -45,6 +45,8 @@ Linux() {
                 LIBnn=lib
 
     make -j${CPU_COUNT}
+    echo "Running make check-all, this will take some time ..."
+    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
 }
 
@@ -85,11 +87,16 @@ Mingw_w64_autotools() {
                 LIBnn=lib
 
     make -j${CPU_COUNT}
+    echo "Running make check-all, this will take some time ..."
+    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
 }
 
 # Use the hand-crafted makefiles.
 Mingw_w64_makefiles() {
+    local _use_msys2_mingw_w64_tcltk=no
+    local _use_w32tex=no
+
     # Instead of copying a MkRules.dist file to MkRules.local
     # just create one with the options we know our toolchains
     # support, and don't set any
@@ -97,6 +104,12 @@ Mingw_w64_makefiles() {
         CPU="x86-64"
     else
         CPU="i686"
+    fi
+
+    if [[ "${_use_msys2_mingw_w64_tcltk}" == "yes" ]]; then
+        TCLTK_VER=86
+    else
+        TCLTK_VER=85
     fi
 
     # I want to use /tmp and have that mounted to Windows %TEMP% in Conda's MSYS2
@@ -116,7 +129,7 @@ Mingw_w64_makefiles() {
     echo "PTHREAD = -pthread"                   >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "COPY_RUNTIME_DLLS = 1"                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "TEXI2ANY = texi2any"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "TCL_VERSION = 86"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "TCL_VERSION = ${TCLTK_VER}"           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "ISDIR = ${PWD}/isdir"                 >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
 
     set -e
@@ -132,37 +145,40 @@ Mingw_w64_makefiles() {
     ./innoextract.exe ${DLCACHE}/isetup-5.5.8-unicode.exe
     mv app isdir
 
-    # I wanted to go for the following unusual approach here of using conda install (in copy mode)
-    # and using MSYS2's mingw-w64 tcl/tk packages, but this is something for longer-term as there
-    # is too much work to do around removing baked-in paths and logic around the ActiveState TCL.
-    # For example expectations of Tcl/{bin,lib}64 folders in src/gnuwin32/installer/JRins.R and
-    # other places I've not yet found.
-    #
-    # Plan was to install excluding the dependencies (so the necessary DLL dependencies will not
-    # be present!). This should not matter since the DLL dependencies have already been installed
-    # when r-base itself was installed and will be on the PATH already. The alternative to this
-    # is to patch R so that it doesn't look for Tcl executables in in Tcl/bin or Tcl/bin64 and
-    # instead looks in the same folder as the R executable which would be my prefered approach.
-    # mkdir -p "${SRC_DIR}/Tcl"
-    # conda install -c https://conda.anaconda.org/rdonnelly \
-    #               --no-deps --yes --copy --prefix "${SRC_DIR}/Tcl" \
-    #               m2-mingw-w64-{tcl,tk,bwidget,tktable}
-    # mv "${SRC_DIR}"/Tcl/Library/mingw-w64/* "${SRC_DIR}"/Tcl/
-    # rm -Rf "${SRC_DIR}"/Tcl/{Library,conda-meta,.BUILDINFO,.MTREE,.PKGINFO}
-    # if [[ "${ARCH}" == "64" ]]; then
-    #     mv "${SRC_DIR}/Tcl/bin" "${SRC_DIR}/Tcl/bin64"
-    # fi
-    #
-    # .. instead, more innoextract for now.
-    #
-    # Server doesn't support byte ranges, hence the || true
-    curl -C - -o ${DLCACHE}/Rtools33.exe -SLO http://cran.r-project.org/bin/windows/Rtools/Rtools33.exe || true
-    if [[ "${ARCH}" == "64" ]]; then
-        ./innoextract.exe -I "code\$rhome64" ${DLCACHE}/Rtools33.exe
-        mv "code\$rhome64/Tcl" "${SRC_DIR}"
+    if [[ "${_use_msys2_mingw_w64_tcltk}" == "yes" ]]; then
+        # I wanted to go for the following unusual approach here of using conda install (in copy mode)
+        # and using MSYS2's mingw-w64 tcl/tk packages, but this is something for longer-term as there
+        # is too much work to do around removing baked-in paths and logic around the ActiveState TCL.
+        # For example expectations of Tcl/{bin,lib}64 folders in src/gnuwin32/installer/JRins.R and
+        # other places I've not yet found.
+        #
+        # Plan was to install excluding the dependencies (so the necessary DLL dependencies will not
+        # be present!). This should not matter since the DLL dependencies have already been installed
+        # when r-base itself was installed and will be on the PATH already. The alternative to this
+        # is to patch R so that it doesn't look for Tcl executables in in Tcl/bin or Tcl/bin64 and
+        # instead looks in the same folder as the R executable which would be my prefered approach.
+        mkdir -p "${SRC_DIR}/Tcl"
+        conda install -c https://conda.anaconda.org/rdonnelly \
+                      --no-deps --yes --copy --prefix "${SRC_DIR}/Tcl" \
+                      m2-mingw-w64-{tcl,tk,bwidget,tktable}
+        mv "${SRC_DIR}"/Tcl/Library/mingw-w64/* "${SRC_DIR}"/Tcl/
+        rm -Rf "${SRC_DIR}"/Tcl/{Library,conda-meta,.BUILDINFO,.MTREE,.PKGINFO}
+        if [[ "${ARCH}" == "64" ]]; then
+            mv "${SRC_DIR}/Tcl/bin" "${SRC_DIR}/Tcl/bin64"
+        fi
     else
-        ./innoextract.exe -I "code\$rhome" ${DLCACHE}/Rtools33.exe
-        mv "code\$rhome/Tcl" "${SRC_DIR}"
+        #
+        # .. instead, more innoextract for now.
+        #
+        # curl claims most servers do not support byte ranges, hence the || true
+        curl -C - -o ${DLCACHE}/Rtools33.exe -SLO http://cran.r-project.org/bin/windows/Rtools/Rtools33.exe || true
+        if [[ "${ARCH}" == "64" ]]; then
+            ./innoextract.exe -I "code\$rhome64" ${DLCACHE}/Rtools33.exe
+            mv "code\$rhome64/Tcl" "${SRC_DIR}"
+        else
+            ./innoextract.exe -I "code\$rhome" ${DLCACHE}/Rtools33.exe
+            mv "code\$rhome/Tcl" "${SRC_DIR}"
+        fi
     fi
 
     # Horrible. We need MiKTeX or something like it (for pdflatex.exe. Building from source
@@ -177,7 +193,6 @@ Mingw_w64_makefiles() {
     # W32TeX doesn't have inconsolata.sty which is
     # needed for R 3.2.4 (later Rs have switched to zi4
     # instead), I've switched to miktex instead.
-    _use_w32tex=no
     if [[ "${_use_w32tex}" == "yes" ]]; then
       mkdir w32tex || true
         pushd w32tex
@@ -213,7 +228,8 @@ Mingw_w64_makefiles() {
 
     cd "${SRC_DIR}/src/gnuwin32"
     make distribution -j${CPU_COUNT} IMAGEDIR=R-3.2.4 > make_distribution.log 2>&1
-    make check-all
+    echo "Running make check-all, this will take some time ..."
+    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     cd installer
     make imagedir IMAGEDIR=R-3.2.4
     cp -rf R-3.2.4 "${PREFIX}"/R
@@ -246,6 +262,8 @@ EOF
                 --enable-R-framework=no
 
     make -j${CPU_COUNT}
+    echo "Running make check-all, this will take some time ..."
+    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
 }
 

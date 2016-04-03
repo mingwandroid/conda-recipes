@@ -96,14 +96,7 @@ Mingw_w64_autotools() {
 Mingw_w64_makefiles() {
     local _use_msys2_mingw_w64_tcltk=yes
     local _use_w32tex=no
-
-    # Just for now while boxplot causes 'Illegal instruction'
-    export CFLAGS="-I${PREFIX}/include -O0 -ggdb"
-    export CPPFLAGS="-I${PREFIX}/include -O0 -ggdb"
-    export FFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -O0 -ggdb"
-    export FCFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -O0 -ggdb"
-    export OBJCFLAGS="-I${PREFIX}/include -O0 -ggdb"
-    export CXXFLAGS="-I${PREFIX}/include -O0 -ggdb"
+    local _debug=yes
 
     # Instead of copying a MkRules.dist file to MkRules.local
     # just create one with the options we know our toolchains
@@ -138,14 +131,19 @@ Mingw_w64_makefiles() {
     echo "USE_ATLAS = NO"                       >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "BUILD_HTML = YES"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "WIN = ${ARCH}"                        >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "EOPTS = -march=${CPU} -mtune=generic" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    if [[ "${_debug}" == "yes" ]]; then
+        echo "EOPTS = -march=${CPU} -mtune=generic -O0" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+        echo "DEBUG = 1"                                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    else
+        # -O3 is used by R otherwise. It might be sensible to adopt -O2 here instead.
+        echo "EOPTS = -march=${CPU} -mtune=generic" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    fi
     echo "OPENMP = -fopenmp"                    >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "PTHREAD = -pthread"                   >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "COPY_RUNTIME_DLLS = 1"                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "TEXI2ANY = texi2any"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "TCL_VERSION = ${TCLTK_VER}"           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     echo "ISDIR = ${PWD}/isdir"                 >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "DEBUG = 1"                            >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
 
     set -e
     # The build process copies this across if it finds it and rummaging about on

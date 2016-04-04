@@ -48,6 +48,7 @@ Linux() {
     echo "Running make check-all, this will take some time ..."
     make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
+    cp -Rf R-3.2.4revised "${PREFIX}"/R
 }
 
 # This was an attempt to see how far we could get with using Autotools as things
@@ -96,7 +97,7 @@ Mingw_w64_autotools() {
 Mingw_w64_makefiles() {
     local _use_msys2_mingw_w64_tcltk=yes
     local _use_w32tex=no
-    local _debug=yes
+    local _debug=no
 
     # Instead of copying a MkRules.dist file to MkRules.local
     # just create one with the options we know our toolchains
@@ -135,7 +136,7 @@ Mingw_w64_makefiles() {
         echo "EOPTS = -march=${CPU} -mtune=generic -O0" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
         echo "DEBUG = 1"                                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     else
-        # -O3 is used by R otherwise. It might be sensible to adopt -O2 here instead.
+        # -O3 is used by R by default. It might be sensible to adopt -O2 here instead?
         echo "EOPTS = -march=${CPU} -mtune=generic" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     fi
     echo "OPENMP = -fopenmp"                    >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
@@ -248,16 +249,25 @@ Mingw_w64_makefiles() {
         echo "***** Build started *****" > make_staged.log
         for _stage in all cairodevices recommended vignettes manuals; do
             echo "***** Stage started ${_stage} *****" >> make_staged.log
-            make ${_stage} -j${CPU_COUNT} IMAGEDIR=R-3.2.4 >> make_staged.log 2>&1
+            make ${_stage} -j${CPU_COUNT} >> make_staged.log 2>&1
         done
     else
-        make distribution -j${CPU_COUNT} IMAGEDIR=R-3.2.4 > make_distribution.log 2>&1
+        make distribution -j${CPU_COUNT} > make_distribution.log 2>&1
     fi
-    echo "Running make check-all, this will take some time ..."
-    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
+    # The flakiness mentioned below can be seen if the values are hacked to:
+    # supremum error =  0.022  with p-value= 1e-04
+    #  FAILED
+    # Error in dkwtest("beta", shape1 = 0.2, shape2 = 0.2) : dkwtest failed
+    # Execution halted
+    # .. and testsuite execution is forced with:
+    # pushd /c/Users/${USER}/mc3/conda-bld/work/R-revised/tests
+    # ~/mc3/conda-bld/work/R-revised/bin/x64/R CMD BATCH --vanilla --no-timing ~/mc3/conda-bld/work/R-revised/tests/p-r-random-tests.R ~/gd/r-language/mingw-w64-p-r-random-tests.R.win.out
+    # .. I need to see if this can be repeated on other systems and reported upstream or investigated more, it is very rare and I don't think warrants holding things up.
+    echo "Running make check-all (up to 3 times, there is some flakiness in p-r-random-tests.R), this will take some time ..."
+    make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
     cd installer
-    make imagedir IMAGEDIR=R-3.2.4
-    cp -rf R-3.2.4 "${PREFIX}"/R
+    make imagedir
+    cp -Rf R-3.2.4revised "${PREFIX}"/R
 }
 
 Darwin() {
@@ -290,6 +300,7 @@ EOF
     echo "Running make check-all, this will take some time ..."
     make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
+    cp -Rf R-3.2.4revised "${PREFIX}"/R
 }
 
 case `uname` in

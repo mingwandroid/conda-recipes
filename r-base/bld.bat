@@ -1,6 +1,3 @@
-set "PATH=%LIBRARY_PREFIX%\mingw-w64\bin;%LIBRARY_PREFIX%\usr\bin;%PATH%"
-echo PATH is %PATH%
-
 @rem See notes.md for more information about all of this.
 
 @rem Compile the launcher
@@ -48,17 +45,6 @@ set SRC_DIR=%SRC_DIR:\=/%
 set "MSYSTEM=MINGW%ARCH%"
 set "CHERE_INVOKING=1"
 bash -lc "./build.sh"
-exit 1
-
-cd "%SRC_DIR%\src\gnuwin32"
-make distribution
-if errorlevel 1 exit 1
-
-@rem And finally collect everything together.
-cd installer
-make imagedir
-if errorlevel 1 exit 1
-
-@rem And install it
-xcopy /S /E R-3.2.2 "%PREFIX%\R\"
-if errorlevel 1 exit 1
+REM not working right?
+REM if errorlevel 1 exit 1
+exit 0

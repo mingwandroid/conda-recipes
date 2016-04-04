@@ -1,8 +1,7 @@
-{% set pfx = 'm2-mingw-w64-' %} [win]
+{% set pfx = '' %} [win]
 
 package:
-  name: r # [win]
-  name: r-base # [not win]
+  name: r-base
   version: 3.2.4
 
 source:
@@ -10,7 +9,6 @@ source:
   url: http://cran.cnr.berkeley.edu/src/base/R-3/R-3.2.4-revised.tar.gz
   sha1: 54d8b02b4564655f1be84b4a830813f8452b5e9c
   patches:
-    - share-make-vars.mk.patch
     - mac-unicode.patch # [osx]
     - 0001-Win32-Stop-confusing-PECOFF_SHLIBS-with-CYGWIN_BUILD.patch
     - 0002-Win32-Fix-trio-config-h-include-depth-issue.patch

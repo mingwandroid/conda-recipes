@@ -1,4 +1,4 @@
-{% set pfx = 'm2-mingw-w64-' if sys.platform=='win32' else '' %}
+{% set pfx = 'm2-mingw-w64-' if win else '' %}
 
 package:
   name: r-base

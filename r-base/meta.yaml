@@ -1,4 +1,4 @@
-{% set pfx = '' %} [win]
+{% set pfx = 'm2-mingw-w64-' if sys.platform=='win32' else '' %}
 
 package:
   name: r-base
@@ -51,8 +51,7 @@ requirements:
     - {{pfx}}libsndfile    # [win]
     - {{pfx}}bwidget       # [win]
     - {{pfx}}tktable       # [win]
-    - {{pfx}}tk            # [win]
-    - tk                   # [not win]
+    - {{pfx}}tk
     - {{pfx}}zlib
     - {{pfx}}gsl
     - {{pfx}}libpng
@@ -69,7 +68,6 @@ requirements:
     - {{pfx}}gcc-libs      # [win]
     - jpeg                 # [not win]
     - {{pfx}}libjpeg-turbo # [win]
-    - {{pfx}}toolchain     # [win]
     - {{pfx}}bzip2         # [win]
     - {{pfx}}libiconv      # [win]
     - {{pfx}}fftw          # [win]
@@ -80,8 +78,7 @@ requirements:
     - {{pfx}}libsndfile    # [win]
     - {{pfx}}bwidget       # [win]
     - {{pfx}}tktable       # [win]
-    - {{pfx}}tk            # [win]
-    - tk                   # [not win]
+    - {{pfx}}tk
     - {{pfx}}zlib
     - {{pfx}}gsl
     - {{pfx}}libpng

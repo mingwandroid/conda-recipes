@@ -34,8 +34,8 @@ build:
 # Suggests: RUnit
 requirements:
   build:
-    - r
-    - r-xts
+    - r-base
+    - r-xts >=0.9_3
     - r-zoo
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -43,8 +43,8 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
-    - r-xts
+    - r-base
+    - r-xts >=0.9_3
     - r-zoo
 
 test:

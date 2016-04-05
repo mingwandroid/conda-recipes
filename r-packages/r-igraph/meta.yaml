@@ -34,7 +34,7 @@ build:
 # Suggests: igraphdata, stats4, rgl, tcltk, graph, ape, scales
 requirements:
   build:
-    - r
+    - r-base
     - r-matrix
     - r-nmf
     - r-irlba
@@ -45,7 +45,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-matrix
     - r-nmf
     - r-irlba

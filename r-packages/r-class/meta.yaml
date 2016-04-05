@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-mass
 
 test:

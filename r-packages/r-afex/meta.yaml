@@ -34,7 +34,7 @@ build:
 # Suggests: ascii, xtable, parallel, plyr, optimx, nloptr, knitr, lattice, multcomp, testthat, mlmRev, dplyr
 requirements:
   build:
-    - r
+    - r-base
     - r-matrix >=1.1.1
     - r-car
     - r-coin
@@ -45,7 +45,7 @@ requirements:
     - r-stringr
 
   run:
-    - r
+    - r-base
     - r-matrix >=1.1.1
     - r-car
     - r-coin

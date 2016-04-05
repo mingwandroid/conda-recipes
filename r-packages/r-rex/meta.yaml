@@ -34,12 +34,12 @@ build:
 # Suggests: testthat, knitr, rmarkdown, dplyr, ggplot2, lintr, Hmisc, stringr, rvest, roxygen2
 requirements:
   build:
-    - r
+    - r-base
     - r-lazyeval
     - r-magrittr
 
   run:
-    - r
+    - r-base
     - r-lazyeval
     - r-magrittr
 

@@ -34,14 +34,14 @@ build:
 # Suggests: testthat
 requirements:
   build:
-    - r
+    - r-base
     - r-htmlwidgets >=0.3.2
     - r-magrittr
     - r-xts >=0.9_7
     - r-zoo >=1.7_10
 
   run:
-    - r
+    - r-base
     - r-htmlwidgets >=0.3.2
     - r-magrittr
     - r-xts >=0.9_7

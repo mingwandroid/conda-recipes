@@ -34,7 +34,7 @@ build:
 # Suggests: testthat (>= 0.8.0), knitr, devtools, rmarkdown
 requirements:
   build:
-    - r
+    - r-base
     - r-rcpp >=0.11.0
     - r-brew
     - r-digest
@@ -46,7 +46,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-rcpp >=0.11.0
     - r-brew
     - r-digest

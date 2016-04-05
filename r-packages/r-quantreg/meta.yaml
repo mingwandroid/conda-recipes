@@ -34,7 +34,7 @@ build:
 # Suggests: tripack, akima, MASS, survival, rgl, logspline, nor1mix, Formula, zoo
 requirements:
   build:
-    - r
+    - r-base
     - r-matrix
     - r-matrixmodels
     - r-sparsem
@@ -44,7 +44,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-matrix
     - r-matrixmodels
     - r-sparsem

@@ -37,7 +37,7 @@ requirements:
     - r-base
 
   run:
-    - r
+    - r-base
 
 test:
   commands:

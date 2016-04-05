@@ -34,7 +34,7 @@ build:
 # Suggests: testthat, curl
 requirements:
   build:
-    - r
+    - r-base
     - r-bh
     - r-rcpp >=0.11.4.6
     - {{posix}}base       # [win]
@@ -44,7 +44,7 @@ requirements:
     - {{native}}libxml2
 
   run:
-    - r
+    - r-base
     - r-bh
     - r-rcpp >=0.11.4.6
     - {{native}}libxml2

@@ -34,7 +34,7 @@ build:
 # Suggests: testthat
 requirements:
   build:
-    - r
+    - r-base
     - r-dbi >=0.3.1
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-dbi >=0.3.1
 
 test:

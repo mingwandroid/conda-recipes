@@ -34,16 +34,16 @@ build:
 
 requirements:
   build:
-    - r
-    - openssl
+    - r-base
+    - {{native}}openssl
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
 
   run:
-    - r
-    - openssl
+    - r-base
+    - {{native}}openssl
 
 test:
   commands:

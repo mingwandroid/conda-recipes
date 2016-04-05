@@ -34,7 +34,7 @@ build:
 # Suggests: testit, rgl (>= 0.95.1201), codetools, rmarkdown, tikzDevice (>= 0.9), XML, RCurl
 requirements:
   build:
-    - r
+    - r-base
     - r-digest
     - r-evaluate >=0.8
     - r-formatr
@@ -44,7 +44,7 @@ requirements:
     - r-yaml >=2.1.5
 
   run:
-    - r
+    - r-base
     - r-digest
     - r-evaluate >=0.8
     - r-formatr
@@ -70,7 +70,7 @@ about:
   license: GPL
   summary: Provides a general-purpose tool for dynamic report generation in R using Literate
     Programming techniques.
-  license_family: GPL
+  license_family: GPL3
 
 # The original CRAN metadata for this package was:
 

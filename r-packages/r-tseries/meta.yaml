@@ -34,7 +34,7 @@ build:
 # Suggests: its
 requirements:
   build:
-    - r
+    - r-base
     - r-quadprog
     - r-zoo
     - {{posix}}base       # [win]
@@ -43,7 +43,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-quadprog
     - r-zoo
 

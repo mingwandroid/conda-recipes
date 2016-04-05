@@ -34,7 +34,7 @@ build:
 # Suggests: parallel, xtable, e1071, vcd, TH.data
 requirements:
   build:
-    - r
+    - r-base
     - r-modeltools >=0.2_9
     - r-multcomp
     - r-mvtnorm >=1.0_3
@@ -45,7 +45,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-modeltools >=0.2_9
     - r-multcomp
     - r-mvtnorm >=1.0_3

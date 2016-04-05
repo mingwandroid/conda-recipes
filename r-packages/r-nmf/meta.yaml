@@ -34,7 +34,7 @@ build:
 # Suggests: RcppOctave (>= 0.11), fastICA, doMPI, bigmemory (>= 4.2), synchronicity, corpcor, xtable, devtools, knitr, bibtex, RUnit, mail, Biobase
 requirements:
   build:
-    - r
+    - r-base
     - r-rcolorbrewer
     - r-cluster
     - r-colorspace
@@ -54,7 +54,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-rcolorbrewer
     - r-cluster
     - r-colorspace

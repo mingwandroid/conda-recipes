@@ -34,7 +34,7 @@ build:
 # Suggests: boot, dynlm, effects, foreign, ineq, KernSmooth, lattice, MASS, mlogit, nlme, nnet, np, plm, pscl, quantreg, ROCR, sampleSelection, scatterplot3d, strucchange, systemfit, rgl, truncreg, tseries, urca
 requirements:
   build:
-    - r
+    - r-base
     - r-formula >=0.2_0
     - r-car >=2.0_1
     - r-lmtest
@@ -43,7 +43,7 @@ requirements:
     - r-zoo
 
   run:
-    - r
+    - r-base
     - r-formula >=0.2_0
     - r-car >=2.0_1
     - r-lmtest

@@ -34,7 +34,7 @@ build:
 # Suggests: httpuv, jpeg, knitr, png, testthat (>= 0.8.0), readr, xml2
 requirements:
   build:
-    - r
+    - r-base
     - r-r6
     - r-curl >=0.9.1
     - r-jsonlite
@@ -42,7 +42,7 @@ requirements:
     - r-openssl >=0.8
 
   run:
-    - r
+    - r-base
     - r-r6
     - r-curl >=0.9.1
     - r-jsonlite

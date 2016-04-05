@@ -34,7 +34,7 @@ build:
 # Suggests: chron, rms, mice, tables, knitr, ff, ffbase, htmltools
 requirements:
   build:
-    - r
+    - r-base
     - r-formula
     - r-acepack
     - r-cluster
@@ -53,7 +53,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-formula
     - r-acepack
     - r-cluster

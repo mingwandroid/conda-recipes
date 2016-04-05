@@ -34,7 +34,7 @@ build:
 # Suggests: knitr, boot, PKPDmodels, MEMSS, testthat (>= 0.8.1), ggplot2, mlmRev, optimx (>= 2013.8.6), gamm4, pbkrtest, HSAUR2, numDeriv
 requirements:
   build:
-    - r
+    - r-base
     - r-mass
     - r-matrix >=1.1.1
     - r-rcpp >=0.10.5
@@ -49,7 +49,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-mass
     - r-matrix >=1.1.1
     - r-rcpp >=0.10.5

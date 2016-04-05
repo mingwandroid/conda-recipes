@@ -36,7 +36,7 @@ build:
 # Suggests: png
 requirements:
   build:
-    - r
+    - r-base
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
@@ -45,7 +45,7 @@ requirements:
     - libpng 1.6.*        # [not win]
 
   run:
-    - r
+    - r-base
     - cairo               # [not win]
     - libpng 1.6.*        # [not win]
 

@@ -34,7 +34,7 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - r-codetools
     - r-crayon
     - r-digest
@@ -48,7 +48,7 @@ requirements:
     - r-testthat
 
   run:
-    - r
+    - r-base
     - r-codetools
     - r-crayon
     - r-digest

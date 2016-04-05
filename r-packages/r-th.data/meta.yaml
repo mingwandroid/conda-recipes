@@ -34,12 +34,12 @@ build:
 # Suggests: dplyr, gdata, plyr
 requirements:
   build:
-    - r
+    - r-base
     - r-mass
     - r-survival
 
   run:
-    - r
+    - r-base
     - r-mass
     - r-survival
 

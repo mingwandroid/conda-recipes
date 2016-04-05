@@ -41,7 +41,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
 
 test:
   commands:

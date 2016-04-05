@@ -34,7 +34,7 @@ build:
 # Suggests: timeSeries,timeDate,tseries,its,chron,fts,tis
 requirements:
   build:
-    - r
+    - r-base
     - r-zoo >=1.7_10
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-zoo >=1.7_10
 
 test:

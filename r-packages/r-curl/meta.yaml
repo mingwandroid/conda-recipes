@@ -34,16 +34,16 @@ build:
 # Suggests: testthat, knitr, jsonlite, rmarkdown, magrittr
 requirements:
   build:
-    - r
-    - curl
+    - r-base
+    - {{native}}curl
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
 
   run:
-    - r
-    - curl
+    - r-base
+    - {{native}}curl
 
 test:
   commands:

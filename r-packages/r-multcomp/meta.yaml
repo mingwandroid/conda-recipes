@@ -34,7 +34,7 @@ build:
 # Suggests: lme4 (>= 0.999375-16), nlme, robustbase, coin, MASS, car, foreign, xtable, lmtest, coxme (>= 2.2-1), SimComp, ISwR
 requirements:
   build:
-    - r
+    - r-base
     - r-th.data >=1.0_2
     - r-codetools
     - r-mvtnorm >=1.0_3
@@ -42,7 +42,7 @@ requirements:
     - r-survival >=2.35_7
 
   run:
-    - r
+    - r-base
     - r-th.data >=1.0_2
     - r-codetools
     - r-mvtnorm >=1.0_3

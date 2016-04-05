@@ -34,7 +34,7 @@ build:
 # Suggests: datasets, Cairo (>= 1.5-5), testthat, knitr (>= 1.6), markdown, rmarkdown, ggplot2
 requirements:
   build:
-    - r
+    - r-base
     - r-r6 >=2.0
     - r-digest
     - r-htmltools >=0.3
@@ -44,7 +44,7 @@ requirements:
     - r-xtable
 
   run:
-    - r
+    - r-base
     - r-r6 >=2.0
     - r-digest
     - r-htmltools >=0.3

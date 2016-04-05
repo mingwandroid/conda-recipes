@@ -34,7 +34,7 @@ build:
 # Suggests: filehash, methods, Rcampdf, Rgraphviz, Rpoppler, SnowballC, tm.lexicon.GeneralInquirer, XML
 requirements:
   build:
-    - r
+    - r-base
     - r-nlp >=0.1_6.2
     - r-slam >=0.1_31
     - {{posix}}base       # [win]
@@ -43,7 +43,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-nlp >=0.1_6.2
     - r-slam >=0.1_31
 

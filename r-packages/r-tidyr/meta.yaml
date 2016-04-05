@@ -34,7 +34,7 @@ build:
 # Suggests: knitr, testthat, data.table, covr, gapminder, rmarkdown
 requirements:
   build:
-    - r
+    - r-base
     - r-rcpp
     - r-dplyr >=0.4
     - r-lazyeval
@@ -46,7 +46,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-rcpp
     - r-dplyr >=0.4
     - r-lazyeval

@@ -34,7 +34,7 @@ build:
 # Suggests: marray, affy, Biobase, limma
 requirements:
   build:
-    - r
+    - r-base
     - r-lattice
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-lattice
 
 test:

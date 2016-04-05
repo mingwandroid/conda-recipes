@@ -34,14 +34,14 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
 
 test:
   commands:
@@ -59,7 +59,7 @@ about:
   #home:
   license: Unlimited
   summary: Smoothing splines with penalties on order m derivatives.
-  license_family: Other
+  license_family: Public-Domain
 
 # The original CRAN metadata for this package was:
 

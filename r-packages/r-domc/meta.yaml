@@ -34,12 +34,12 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - r-foreach >=1.2.0
     - r-iterators >=1.0.0
 
   run:
-    - r
+    - r-base
     - r-foreach >=1.2.0
     - r-iterators >=1.0.0
 

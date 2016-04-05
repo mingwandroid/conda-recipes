@@ -34,7 +34,7 @@ build:
 # Suggests: knitr, testthat
 requirements:
   build:
-    - r
+    - r-base
     - r-htmlwidgets >=0.5
     - r-rstudioapi >=0.3.1
     - r-scales >=0.3.0
@@ -42,7 +42,7 @@ requirements:
     - r-visnetwork >=0.1.2
 
   run:
-    - r
+    - r-base
     - r-htmlwidgets >=0.5
     - r-rstudioapi >=0.3.1
     - r-scales >=0.3.0

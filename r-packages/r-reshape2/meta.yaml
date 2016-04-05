@@ -34,7 +34,7 @@ build:
 # Suggests: testthat (>= 0.8.0), lattice
 requirements:
   build:
-    - r
+    - r-base
     - r-rcpp
     - r-plyr >=1.8.1
     - r-stringr
@@ -44,7 +44,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-rcpp
     - r-plyr >=1.8.1
     - r-stringr

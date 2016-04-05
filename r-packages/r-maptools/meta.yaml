@@ -34,7 +34,7 @@ build:
 # Suggests: rgeos (>= 0.1-8), spatstat (>= 1.18), PBSmapping, maps, RColorBrewer, raster, polyclip
 requirements:
   build:
-    - r
+    - r-base
     - r-foreign >=0.8
     - r-lattice
     - r-sp >=1.0_11
@@ -44,7 +44,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-foreign >=0.8
     - r-lattice
     - r-sp >=1.0_11

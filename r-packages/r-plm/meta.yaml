@@ -34,7 +34,7 @@ build:
 # Suggests: AER
 requirements:
   build:
-    - r
+    - r-base
     - r-formula >=0.2_0
     - r-mass
     - r-bdsmatrix
@@ -46,7 +46,7 @@ requirements:
     - r-zoo
 
   run:
-    - r
+    - r-base
     - r-formula >=0.2_0
     - r-mass
     - r-bdsmatrix

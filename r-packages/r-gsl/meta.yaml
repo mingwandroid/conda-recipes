@@ -34,7 +34,7 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - {{native}}gsl
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - {{native}}gsl
 
 test:

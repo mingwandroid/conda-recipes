@@ -34,7 +34,7 @@ build:
 # Suggests: MASS, rpart
 requirements:
   build:
-    - r
+    - r-base
     - r-bitops
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-bitops
 
 test:

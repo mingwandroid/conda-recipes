@@ -34,7 +34,7 @@ build:
 # Suggests: knitr, RCurl
 requirements:
   build:
-    - r
+    - r-base
     - r-mime >=0.3
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-mime >=0.3
 
 test:

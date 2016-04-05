@@ -34,7 +34,7 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
@@ -43,7 +43,7 @@ requirements:
     - {{native}}zlib
 
   run:
-    - r
+    - r-base
     - {{native}}libpng
     - {{native}}zlib
 

@@ -34,7 +34,7 @@ build:
 # Suggests: curl (>= 0.9), testthat (>= 0.7), BiocInstaller, Rcpp (>= 0.10.0), MASS, rmarkdown, knitr, lintr (>= 0.2.1), bitops, roxygen2 (>= 5.0.0), evaluate, rversions
 requirements:
   build:
-    - r
+    - r-base
     - r-digest
     - r-git2r >=0.11.0
     - r-httr >=0.4
@@ -49,7 +49,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-digest
     - r-git2r >=0.11.0
     - r-httr >=0.4

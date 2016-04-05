@@ -34,14 +34,14 @@ build:
 # Suggests: RUnit, inline, rbenchmark, highlight, pkgKitten (>= 0.1.2)
 requirements:
   build:
-    - r
+    - r-base
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
 
 test:
   commands:

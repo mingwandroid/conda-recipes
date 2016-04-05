@@ -34,14 +34,14 @@ build:
 # Suggests: knitr, igraph
 requirements:
   build:
-    - r
+    - r-base
     - r-htmltools
     - r-htmlwidgets
     - r-jsonlite
     - r-magrittr
 
   run:
-    - r
+    - r-base
     - r-htmltools
     - r-htmlwidgets
     - r-jsonlite

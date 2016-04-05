@@ -34,7 +34,7 @@ build:
 # Suggests: coda, chron, DAAG, fts, its, ggplot2, mondate, scales, strucchange, timeDate, timeSeries, tis, tseries, xts
 requirements:
   build:
-    - r
+    - r-base
     - r-lattice >=0.20_27
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-lattice >=0.20_27
 
 test:

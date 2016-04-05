@@ -34,12 +34,12 @@ build:
 # Suggests: randomForest
 requirements:
   build:
-    - r
+    - r-base
     - r-codetools
     - r-iterators
 
   run:
-    - r
+    - r-base
     - r-codetools
     - r-iterators
 

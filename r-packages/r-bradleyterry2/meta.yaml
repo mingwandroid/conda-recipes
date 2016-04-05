@@ -34,13 +34,13 @@ build:
 # Suggests: prefmod
 requirements:
   build:
-    - r
+    - r-base
     - r-brglm
     - r-gtools
     - r-lme4 >=1.0
 
   run:
-    - r
+    - r-base
     - r-brglm
     - r-gtools
     - r-lme4 >=1.0

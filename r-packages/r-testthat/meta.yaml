@@ -34,7 +34,7 @@ build:
 # Suggests: devtools
 requirements:
   build:
-    - r
+    - r-base
     - r-crayon
     - r-digest
     - r-praise
@@ -44,7 +44,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-crayon
     - r-digest
     - r-praise

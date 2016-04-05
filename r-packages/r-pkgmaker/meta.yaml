@@ -34,7 +34,7 @@ build:
 # Suggests: devtools (>= 0.8), bibtex, RUnit, testthat, knitr, ReportingTools, hwriter, argparse
 requirements:
   build:
-    - r
+    - r-base
     - r-codetools
     - r-digest
     - r-registry
@@ -42,7 +42,7 @@ requirements:
     - r-xtable
 
   run:
-    - r
+    - r-base
     - r-codetools
     - r-digest
     - r-registry

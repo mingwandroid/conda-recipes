@@ -35,11 +35,11 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - r-rjava
 
   run:
-    - r
+    - r-base
     - r-rjava
 
 test:

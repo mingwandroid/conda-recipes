@@ -34,7 +34,7 @@ build:
 # Suggests: multcomp
 requirements:
   build:
-    - r
+    - r-base
     - r-ggplot2
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-ggplot2
 
 test:

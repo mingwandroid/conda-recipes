@@ -34,7 +34,7 @@ build:
 # Suggests: MASS, KernSmooth, sfsmisc, scatterplot3d, Rmpfr, bbmle, knitr, parallel, mvnormtest, partitions, polynom, randtoolbox, rugarch, Runuran, tseries, VGAM, VineCopula, zoo
 requirements:
   build:
-    - r
+    - r-base
     - r-adgoftest
     - r-matrix
     - r-colorspace
@@ -49,7 +49,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-adgoftest
     - r-matrix
     - r-colorspace

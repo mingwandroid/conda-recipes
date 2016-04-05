@@ -34,7 +34,7 @@ build:
 # Suggests: RSQLite (>= 1.0.0), RMySQL, RPostgreSQL, data.table, testthat, knitr, microbenchmark, ggplot2, mgcv, Lahman (>= 3.0-1), nycflights13, methods
 requirements:
   build:
-    - r
+    - r-base
     - r-bh >=1.58.0_1
     - r-dbi >=0.3
     - r-r6
@@ -48,7 +48,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-bh >=1.58.0_1
     - r-dbi >=0.3
     - r-r6

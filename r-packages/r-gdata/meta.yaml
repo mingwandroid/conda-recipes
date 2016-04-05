@@ -34,11 +34,11 @@ build:
 # Suggests: RUnit
 requirements:
   build:
-    - r
+    - r-base
     - r-gtools
 
   run:
-    - r
+    - r-base
     - r-gtools
 
 test:

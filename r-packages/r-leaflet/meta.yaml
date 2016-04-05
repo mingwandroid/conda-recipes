@@ -34,7 +34,7 @@ build:
 # Suggests: knitr, maps, shiny, testit (>= 0.4), rgdal, R6, RJSONIO
 requirements:
   build:
-    - r
+    - r-base
     - r-rcolorbrewer
     - r-base64enc
     - r-htmltools
@@ -47,7 +47,7 @@ requirements:
     - r-sp
 
   run:
-    - r
+    - r-base
     - r-rcolorbrewer
     - r-base64enc
     - r-htmltools

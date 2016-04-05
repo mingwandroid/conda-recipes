@@ -34,7 +34,7 @@ build:
 # Suggests: covr, ggplot2movies, hexbin, Hmisc, lattice, mapproj, maps, maptools, mgcv, multcomp, nlme, testthat (>= 0.11.0), quantreg, knitr, rpart, rmarkdown, svglite
 requirements:
   build:
-    - r
+    - r-base
     - r-mass
     - r-digest
     - r-gtable >=0.1.1
@@ -43,7 +43,7 @@ requirements:
     - r-scales >=0.3.0
 
   run:
-    - r
+    - r-base
     - r-mass
     - r-digest
     - r-gtable >=0.1.1

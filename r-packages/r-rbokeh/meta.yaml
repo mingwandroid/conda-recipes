@@ -34,7 +34,7 @@ build:
 # Suggests: testthat, data.table, lattice, roxygen2 (>= 5.0.0)
 requirements:
   build:
-    - r
+    - r-base
     - r-digest
     - r-ggplot2
     - r-gistr
@@ -48,7 +48,7 @@ requirements:
     - r-scales
 
   run:
-    - r
+    - r-base
     - r-digest
     - r-ggplot2
     - r-gistr

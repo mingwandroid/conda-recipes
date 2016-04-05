@@ -34,7 +34,7 @@ build:
 # Suggests: car, strucchange, sandwich, dynlm, stats4, survival, AER
 requirements:
   build:
-    - r
+    - r-base
     - r-zoo
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
@@ -42,7 +42,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-zoo
 
 test:

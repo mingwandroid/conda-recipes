@@ -34,12 +34,12 @@ build:
 # Suggests: maps, mapproj, deldir, tripack, zoo, MASS, quantreg, mgcv
 requirements:
   build:
-    - r
+    - r-base
     - r-rcolorbrewer
     - r-lattice
 
   run:
-    - r
+    - r-base
     - r-rcolorbrewer
     - r-lattice
 

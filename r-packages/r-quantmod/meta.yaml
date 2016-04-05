@@ -34,7 +34,7 @@ build:
 # Suggests: DBI,RMySQL,RSQLite,timeSeries,its,XML,downloader
 requirements:
   build:
-    - r
+    - r-base
     - r-ttr >=0.2
     - r-xts >=0.9_0
     - r-zoo
@@ -44,7 +44,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-ttr >=0.2
     - r-xts >=0.9_0
     - r-zoo

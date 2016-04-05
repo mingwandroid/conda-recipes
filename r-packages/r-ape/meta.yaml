@@ -34,7 +34,7 @@ build:
 # Suggests: gee, expm
 requirements:
   build:
-    - r
+    - r-base
     - r-lattice
     - r-nlme
     - {{posix}}base       # [win]
@@ -43,7 +43,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-lattice
     - r-nlme
 

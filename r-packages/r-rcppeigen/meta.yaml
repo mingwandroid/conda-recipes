@@ -34,7 +34,7 @@ build:
 # Suggests: inline, RUnit, pkgKitten
 requirements:
   build:
-    - r
+    - r-base
     - r-matrix >=1.1_0
     - r-rcpp >=0.11.0
     - {{posix}}base       # [win]
@@ -43,7 +43,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-matrix >=1.1_0
     - r-rcpp >=0.11.0
 

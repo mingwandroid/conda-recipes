@@ -34,7 +34,7 @@ build:
 # Suggests: BradleyTerry2, e1071, earth (>= 2.2-3), fastICA, gam, ipred, kernlab, klaR, MASS, ellipse, mda, mgcv, mlbench, nnet, party (>= 0.9-99992), pls, pROC (>= 1.8), proxy, randomForest, RANN, spls, subselect, pamr, superpc, Cubist, testthat (>= 0.9.1)
 requirements:
   build:
-    - r
+    - r-base
     - r-car
     - r-foreach
     - r-ggplot2
@@ -48,7 +48,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-car
     - r-foreach
     - r-ggplot2
@@ -73,7 +73,7 @@ about:
   home: https://github.com/topepo/caret/
   license: GPL (>= 2)
   summary: Misc functions for training and plotting classification and regression models.
-  license_family: GPL2
+  license_family: GPL3
 
 # The original CRAN metadata for this package was:
 

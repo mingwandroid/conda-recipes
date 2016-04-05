@@ -34,12 +34,12 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - r-curl
     - r-xml2
 
   run:
-    - r
+    - r-base
     - r-curl
     - r-xml2
 

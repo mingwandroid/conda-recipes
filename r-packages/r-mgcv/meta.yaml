@@ -43,7 +43,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-matrix
     - r-nlme >=3.1_64
 

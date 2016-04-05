@@ -34,7 +34,7 @@ build:
 # Suggests: rgdal (>= 0.9-1), rgeos (>= 0.3-8), ncdf4, igraph, tcltk, parallel, rasterVis
 requirements:
   build:
-    - r
+    - r-base
     - r-rcpp
     - r-sp >=1.2_0
     - {{posix}}base       # [win]
@@ -43,7 +43,7 @@ requirements:
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
     - r-rcpp
     - r-sp >=1.2_0
 

@@ -34,11 +34,11 @@ build:
 # Suggests: testthat
 requirements:
   build:
-    - r
+    - r-base
     - r-memoise
 
   run:
-    - r
+    - r-base
     - r-memoise
 
 test:

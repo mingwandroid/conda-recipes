@@ -34,14 +34,14 @@ build:
 # Suggests: mapproj (>= 1.2-0), mapdata (>= 2.2-4), sp, maptools
 requirements:
   build:
-    - r
+    - r-base
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
 
   run:
-    - r
+    - r-base
 
 test:
   commands:

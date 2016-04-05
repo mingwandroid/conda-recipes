@@ -34,13 +34,13 @@ build:
 # Suggests: parallel, RUnit, knitr
 requirements:
   build:
-    - r
+    - r-base
     - r-digest
     - r-pkgmaker >=0.20
     - r-stringr
 
   run:
-    - r
+    - r-base
     - r-digest
     - r-pkgmaker >=0.20
     - r-stringr

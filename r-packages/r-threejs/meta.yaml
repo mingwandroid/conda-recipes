@@ -34,14 +34,14 @@ build:
 # Suggests: htmltools (>= 0.2.6), maps, igraph
 requirements:
   build:
-    - r
+    - r-base
     - r-matrix
     - r-base64enc
     - r-htmlwidgets >=0.3.2
     - r-jsonlite
 
   run:
-    - r
+    - r-base
     - r-matrix
     - r-base64enc
     - r-htmlwidgets >=0.3.2

@@ -35,12 +35,12 @@ build:
 
 requirements:
   build:
-    - r
+    - r-base
     - r-rjava
     - r-xlsxjars
 
   run:
-    - r
+    - r-base
     - r-rjava
     - r-xlsxjars
 

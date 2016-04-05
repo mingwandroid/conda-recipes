@@ -36,7 +36,6 @@ requirements:
 
   run:
     - r
-    - libgcc # [not win]
 
 test:
   commands:
@@ -57,6 +56,7 @@ about:
     with an emphasis on multivariate data. Lattice is sufficient for typical graphics
     needs, and is also flexible enough to handle most nonstandard requirements. See
     ?Lattice for an introduction.
+  license_family: GPL3
 
 # The original CRAN metadata for this package was:
 

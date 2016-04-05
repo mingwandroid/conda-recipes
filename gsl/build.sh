@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 if [[ "$(uname)" == "Darwin" ]]; then
   # CC=clang otherwise:
   # error: ambiguous instructions require an explicit suffix (could be 'filds', or 'fildl')

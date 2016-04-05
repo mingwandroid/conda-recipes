@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-rngtools
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -63,6 +66,7 @@ about:
     convenient default methods greatly facilitate the way current RNG settings can be
     changed.
   license_family: GPL3
+
 # The original CRAN metadata for this package was:
 
 # Package: rngtools

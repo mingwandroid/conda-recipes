@@ -1,10 +1,10 @@
 package:
   name: r-recommended
-  version: 3.2.2
+  version: 3.2.4
 
 requirements:
   run:
-    - r 3.2.2
+    - r 3.2.4
     - r-boot
     - r-class
     - r-cluster

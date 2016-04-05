@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-testthat
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -35,14 +38,16 @@ requirements:
     - r-crayon
     - r-digest
     - r-praise
-    - gcc # [not win]
+    - {{posix}}base       # [win]
+    - {{posix}}zip        # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
 
   run:
     - r
     - r-crayon
     - r-digest
     - r-praise
-    - libgcc # [not win]
 
 test:
   commands:
@@ -61,6 +66,7 @@ about:
   license: MIT + file LICENSE
   summary: A unit testing system designed to be fun, flexible and easy to set up.
   license_family: MIT
+
 # The original CRAN metadata for this package was:
 
 # Package: testthat

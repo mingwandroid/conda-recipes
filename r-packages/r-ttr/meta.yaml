@@ -1,14 +1,17 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-ttr
   # Note that conda versions cannot contain -, so any -'s in the version have
   # been replaced with _'s.
-  version: "0.23_0"
+  version: "0.23_1"
 
 source:
-  fn: TTR_0.23-0.tar.gz
+  fn: TTR_0.23-1.tar.gz
   url:
-    - http://cran.r-project.org/src/contrib/TTR_0.23-0.tar.gz
-    - http://cran.r-project.org/src/contrib/Archive/TTR/TTR_0.23-0.tar.gz
+    - http://cran.r-project.org/src/contrib/TTR_0.23-1.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/TTR/TTR_0.23-1.tar.gz
 
 
   # You can add a hash for the file here, like md5 or sha1
@@ -32,15 +35,17 @@ build:
 requirements:
   build:
     - r
-    - r-xts >=0.9_3
+    - r-xts
     - r-zoo
-    - gcc # [not win]
+    - {{posix}}base       # [win]
+    - {{posix}}zip        # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
 
   run:
     - r
-    - r-xts >=0.9_3
+    - r-xts
     - r-zoo
-    - libgcc # [not win]
 
 test:
   commands:
@@ -59,13 +64,14 @@ about:
   license: GPL-2
   summary: Functions and data to construct technical trading rules with R.
   license_family: GPL2
+
 # The original CRAN metadata for this package was:
 
 # Package: TTR
 # Type: Package
 # Title: Technical Trading Rules
-# Version: 0.23-0
-# Date: 2015-07-09
+# Version: 0.23-1
+# Date: 2016-03-19
 # Author: Joshua Ulrich
 # Maintainer: Joshua Ulrich <josh.m.ulrich@gmail.com>
 # Imports: xts (>= 0.9-3), zoo
@@ -77,9 +83,9 @@ about:
 # URL: https://github.com/joshuaulrich/TTR
 # BugReports: https://github.com/joshuaulrich/TTR/issues
 # NeedsCompilation: yes
-# Packaged: 2015-07-10 01:22:47 UTC; josh
+# Packaged: 2016-03-19 16:55:18 UTC; josh
 # Repository: CRAN
-# Date/Publication: 2015-07-10 20:15:41
+# Date/Publication: 2016-03-21 00:06:52
 
 # See
 # http://docs.continuum.io/conda/build.html for

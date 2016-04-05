@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-xts
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -33,12 +36,14 @@ requirements:
   build:
     - r
     - r-zoo >=1.7_10
-    - gcc # [not win]
+    - {{posix}}base       # [win]
+    - {{posix}}zip        # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
 
   run:
     - r
     - r-zoo >=1.7_10
-    - libgcc # [not win]
 
 test:
   commands:
@@ -59,6 +64,7 @@ about:
     zoo, maximizing native format information preservation and allowing for user level
     customization and extension, while simplifying cross-class interoperability.
   license_family: GPL3
+
 # The original CRAN metadata for this package was:
 
 # Package: xts

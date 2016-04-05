@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-data.table
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -33,12 +36,14 @@ requirements:
   build:
     - r
     - r-chron
-    - gcc # [not win]
+    - {{posix}}base       # [win]
+    - {{posix}}zip        # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
 
   run:
     - r
     - r-chron
-    - libgcc # [not win]
 
 test:
   commands:
@@ -59,6 +64,7 @@ about:
     of columns by group using no copies at all, list columns and a fast file reader
     (fread). Offers a natural and flexible syntax, for faster development.
   license_family: GPL3
+
 # The original CRAN metadata for this package was:
 
 # Package: data.table

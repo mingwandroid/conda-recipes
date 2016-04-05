@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-plyr
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -32,13 +35,15 @@ build:
 requirements:
   build:
     - r
-    - r-rcpp
-    - gcc # [not win]
+    - r-rcpp >=0.11.0
+    - {{posix}}base       # [win]
+    - {{posix}}zip        # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
 
   run:
     - r
-    - r-rcpp
-    - libgcc # [not win]
+    - r-rcpp >=0.11.0
 
 test:
   commands:
@@ -61,6 +66,7 @@ about:
     time point in your study, summarise data by panels or collapse high-dimensional
     arrays to simpler summary statistics. The development of ''plyr'' has been generously
     supported by ''Becton Dickinson''.'
+
   license_family: MIT
 
 # The original CRAN metadata for this package was:

@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-domc
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -58,6 +61,7 @@ about:
   summary: Provides a parallel backend for the %dopar% function using the multicore functionality
     of the parallel package.
   license_family: GPL2
+
 # The original CRAN metadata for this package was:
 
 # Package: doMC

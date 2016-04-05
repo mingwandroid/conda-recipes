@@ -1,3 +1,6 @@
+{% set posix = 'm2-msys2-' if win else '' %}
+{% set native = 'm2-mingw-w64-' if win else '' %}
+
 package:
   name: r-quantmod
   # Note that conda versions cannot contain -, so any -'s in the version have
@@ -35,14 +38,16 @@ requirements:
     - r-ttr >=0.2
     - r-xts >=0.9_0
     - r-zoo
-    - gcc # [not win]
+    - {{posix}}base       # [win]
+    - {{posix}}zip        # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
 
   run:
     - r
     - r-ttr >=0.2
     - r-xts >=0.9_0
     - r-zoo
-    - libgcc # [not win]
 
 test:
   commands:
@@ -61,6 +66,7 @@ about:
   license: GPL-3
   summary: Specify, build, trade, and analyse quantitative financial trading strategies.
   license_family: GPL3
+
 # The original CRAN metadata for this package was:
 
 # Package: quantmod

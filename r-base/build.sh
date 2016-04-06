@@ -46,8 +46,8 @@ Linux() {
                 LIBnn=lib
 
     make -j${CPU_COUNT}
-    echo "Running make check-all, this will take some time ..."
-    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1 || make check-all -j1 V=1 > $(uname)-make-check.2.log 2>&1
+    # echo "Running make check-all, this will take some time ..."
+    # make check-all -j1 V=1 > $(uname)-make-check.log 2>&1 || make check-all -j1 V=1 > $(uname)-make-check.2.log 2>&1
 
     make install
 }
@@ -90,8 +90,8 @@ Mingw_w64_autotools() {
                 LIBnn=lib
 
     make -j${CPU_COUNT}
-    echo "Running make check-all, this will take some time ..."
-    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
+    # echo "Running make check-all, this will take some time ..."
+    # make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
 }
 
@@ -265,8 +265,8 @@ Mingw_w64_makefiles() {
     # pushd /c/Users/${USER}/mc3/conda-bld/work/R-revised/tests
     # ~/mc3/conda-bld/work/R-revised/bin/x64/R CMD BATCH --vanilla --no-timing ~/mc3/conda-bld/work/R-revised/tests/p-r-random-tests.R ~/gd/r-language/mingw-w64-p-r-random-tests.R.win.out
     # .. I need to see if this can be repeated on other systems and reported upstream or investigated more, it is very rare and I don't think warrants holding things up.
-    echo "Running make check-all (up to 3 times, there is some flakiness in p-r-random-tests.R), this will take some time ..."
-    make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
+    # echo "Running make check-all (up to 3 times, there is some flakiness in p-r-random-tests.R), this will take some time ..."
+    # make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
     cd installer
     make imagedir
     cp -Rf R-3.2.4revised "${PREFIX}"/R
@@ -299,8 +299,8 @@ EOF
                 --enable-R-framework=no
 
     make -j${CPU_COUNT}
-    echo "Running make check-all, this will take some time ..."
-    make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
+    # echo "Running make check-all, this will take some time ..."
+    # make check-all -j1 V=1 > $(uname)-make-check.log 2>&1
     make install
 }
 

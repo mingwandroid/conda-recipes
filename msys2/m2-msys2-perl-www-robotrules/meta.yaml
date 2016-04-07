@@ -1,0 +1,28 @@
+package:
+  name: m2-msys2-perl-www-robotrules
+  version: '6.02'
+source:
+  url: http://repo.msys2.org/msys/sources/perl-WWW-RobotRules-6.02-2.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
+build:
+  number: '2'
+requirements:
+  run:
+  - m2-msys2-perl
+  - m2-msys2-perl-uri
+about:
+  home: https://metacpan.org/release/WWW-RobotRules
+  license: PerlArtistic, GPL
+  summary: Database of robots.txt-derived permissions
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/perl-WWW-RobotRules-6.02-2-any.pkg.tar.xz
+      md5: e3b5ab77d5979233438388dbe182444e
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/perl-WWW-RobotRules-6.02-2-any.pkg.tar.xz
+      md5: 83a4d6b4a168c26c383f07ea4725f4e3
+      mv-src: '*'
+      mv-dst: Library/

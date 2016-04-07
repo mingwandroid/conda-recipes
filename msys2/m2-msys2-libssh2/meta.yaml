@@ -3,7 +3,7 @@ package:
   version: 1.6.0
 source:
   url: http://repo.msys2.org/msys/sources/libssh2-1.6.0-1.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '1'
 requirements:

@@ -1,27 +1,27 @@
 package:
   name: m2-msys2-libcrypt
-  version: '1.1'
+  version: '1.3'
 source:
-  url: http://repo.msys2.org/msys/sources/libcrypt-1.1-6.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/msys/sources/libcrypt-1.3-1.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
-  number: '6'
+  number: '1'
 requirements:
   run:
   - m2-msys2-gcc-libs
 about:
-  home: http://cygwin.com/
+  home: https://cygwin.com/
   license: GPL (msys-2.0.dll linkage), custom
   summary: Encryption/Decryption utility and library
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/libcrypt-1.1-6-i686.pkg.tar.xz
-      md5: ac77df8845118ab4c1a3c393d2a91289
+      url: http://repo.msys2.org/msys/i686/libcrypt-1.3-1-i686.pkg.tar.xz
+      md5: 6a6e33d7d31c0d208906e747f5342ca7
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/libcrypt-1.1-6-x86_64.pkg.tar.xz
-      md5: 81bb482446043dd6394bd8ac53b797ac
+      url: http://repo.msys2.org/msys/x86_64/libcrypt-1.3-1-x86_64.pkg.tar.xz
+      md5: 1d43b2bf5ee612e1b05ff75a72065f32
       mv-src: '*'
       mv-dst: Library/

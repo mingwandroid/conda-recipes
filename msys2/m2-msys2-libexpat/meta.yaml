@@ -1,11 +1,11 @@
 package:
   name: m2-msys2-libexpat
-  version: 2.1.0
+  version: 2.1.1
 source:
-  url: http://repo.msys2.org/msys/sources/libexpat-2.1.0-2.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/msys/sources/libexpat-2.1.1-1.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
-  number: '2'
+  number: '1'
 requirements:
   run:
   - m2-msys2-gcc-libs
@@ -16,12 +16,12 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/libexpat-2.1.0-2-i686.pkg.tar.xz
-      md5: e2ac4df4b9e6f5d284e6a77bd15e4213
+      url: http://repo.msys2.org/msys/i686/libexpat-2.1.1-1-i686.pkg.tar.xz
+      md5: cbb0f3559729486e3e73d089d0030608
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/libexpat-2.1.0-2-x86_64.pkg.tar.xz
-      md5: 91113c0c754df6fc7afe2554be09e6c1
+      url: http://repo.msys2.org/msys/x86_64/libexpat-2.1.1-1-x86_64.pkg.tar.xz
+      md5: 4371915c5d4aedf8a819c05e8fe3e236
       mv-src: '*'
       mv-dst: Library/

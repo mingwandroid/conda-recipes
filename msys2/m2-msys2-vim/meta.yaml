@@ -1,0 +1,27 @@
+package:
+  name: m2-msys2-vim
+  version: 7.4.1468
+source:
+  url: http://repo.msys2.org/msys/sources/vim-7.4.1468-1.src.tar.gz
+  md5: d01f32cc2cf4201b0890e1f3602c7d09
+build:
+  number: '1'
+requirements:
+  run:
+  - m2-msys2-ncurses
+about:
+  home: http://www.vim.org
+  license: GPL (msys-2.0.dll linkage), custom:vim
+  summary: null
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/msys/i686/vim-7.4.1468-1-i686.pkg.tar.xz
+      md5: e435f82db7353fc99182c97efdbe5dec
+      mv-src: '*'
+      mv-dst: Library/
+    win-64:
+      url: http://repo.msys2.org/msys/x86_64/vim-7.4.1468-1-x86_64.pkg.tar.xz
+      md5: 0f9210ee53bc013c4f50c330a6905189
+      mv-src: '*'
+      mv-dst: Library/

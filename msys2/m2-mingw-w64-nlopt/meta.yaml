@@ -1,0 +1,26 @@
+package:
+  name: m2-mingw-w64-nlopt
+  version: 2.4.2
+source:
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-nlopt-2.4.2-1.src.tar.gz
+  md5: 7239cb854026c13bd5e14cddbba70eed
+build:
+  number: '1'
+requirements:
+  run: []
+about:
+  home: http://ab-initio.mit.edu/wiki/index.php/NLopt
+  license: LGPLv2.1+
+  summary: A library for nonlinear optimization (mingw-w64)
+extra:
+  msys2-binaries:
+    win-32:
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-nlopt-2.4.2-1-any.pkg.tar.xz
+      md5: f7c88c0b1a0d0bd9a57e403e51081a21
+      mv-src: mingw32
+      mv-dst: Library/mingw-w64
+    win-64:
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-nlopt-2.4.2-1-any.pkg.tar.xz
+      md5: fb0305247179d5be8d98eb2d863d787a
+      mv-src: mingw64
+      mv-dst: Library/mingw-w64

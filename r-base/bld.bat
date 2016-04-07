@@ -45,6 +45,5 @@ set SRC_DIR=%SRC_DIR:\=/%
 set "MSYSTEM=MINGW%ARCH%"
 set "CHERE_INVOKING=1"
 bash -lc "./build.sh"
-REM not working right?
-REM if errorlevel 1 exit 1
+if errorlevel 1 exit 1
 exit 0

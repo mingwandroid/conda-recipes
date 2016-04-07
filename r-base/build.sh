@@ -173,6 +173,9 @@ Mingw_w64_makefiles() {
         # when r-base itself was installed and will be on the PATH already. The alternative to this
         # is to patch R so that it doesn't look for Tcl executables in in Tcl/bin or Tcl/bin64 and
         # instead looks in the same folder as the R executable which would be my prefered approach.
+        #
+        # The thing to is probably to make stub programs launching the right binaries in mingw-w64/bin
+        # .. perhaps launcher.c can be generalized?
         mkdir -p "${SRC_DIR}/Tcl"
         conda install -c https://conda.anaconda.org/rdonnelly \
                       --no-deps --yes --copy --prefix "${SRC_DIR}/Tcl" \
@@ -235,12 +238,17 @@ Mingw_w64_makefiles() {
     else
       mkdir miktex || true
       pushd miktex
+      # Fetch e.g.:
+      # http://ctan.mines-albi.fr/systems/win32/miktex/tm/packages/url.tar.lzma
+      # http://ctan.mines-albi.fr/systems/win32/miktex/tm/packages/mptopdf.tar.lzma
+      # http://ctan.mines-albi.fr/systems/win32/miktex/tm/packages/inconsolata.tar.lzma
         curl -C - -o ${DLCACHE}/miktex-portable-2.9.5857.exe -SLO http://mirrors.ctan.org/systems/win32/miktex/setup/miktex-portable-2.9.5857.exe || true
         echo "Extracting miktex-portable-2.9.5857.exe, this will take some time ..."
         7za x -y ${DLCACHE}/miktex-portable-2.9.5857.exe > /dev/null
         # We also need the url, incolsolata and mptopdf packages and
         # do not want a GUI to prompt us about installing these.
         sed -i 's|AutoInstall=2|AutoInstall=1|g' miktex/config/miktex.ini
+        #see also: http://tex.stackexchange.com/q/302679
         PATH=${PWD}/miktex/bin:${PATH}
       popd
     fi
@@ -266,10 +274,13 @@ Mingw_w64_makefiles() {
     # ~/mc3/conda-bld/work/R-revised/bin/x64/R CMD BATCH --vanilla --no-timing ~/mc3/conda-bld/work/R-revised/tests/p-r-random-tests.R ~/gd/r-language/mingw-w64-p-r-random-tests.R.win.out
     # .. I need to see if this can be repeated on other systems and reported upstream or investigated more, it is very rare and I don't think warrants holding things up.
     # echo "Running make check-all (up to 3 times, there is some flakiness in p-r-random-tests.R), this will take some time ..."
-    # make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
+    make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
     cd installer
     make imagedir
     cp -Rf R-3.2.4revised "${PREFIX}"/R
+    # Remove the recommeded libraries, we package them separately as-per the other platforms now.
+    rm -Rf "${PREFIX}"/R/library/{MASS,lattice,Matrix,nlme,survival,boot,cluster,codetools,foreign,KernSmooth,rpart,class,nnet,spatial,mgcv}
+    return 0
 }
 
 Darwin() {

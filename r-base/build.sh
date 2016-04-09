@@ -99,7 +99,7 @@ Mingw_w64_autotools() {
 Mingw_w64_makefiles() {
     local _use_msys2_mingw_w64_tcltk=yes
     local _use_w32tex=no
-    local _debug=no
+    local _debug=yes
 
     # Instead of copying a MkRules.dist file to MkRules.local
     # just create one with the options we know our toolchains
@@ -128,12 +128,12 @@ Mingw_w64_makefiles() {
     DLCACHE=/c/Users/${USER}/Downloads
     [[ -d $DLCACHE ]] || mkdir -p $DLCACHE
 
-    echo "LEA_MALLOC = YES"                      > "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "BINPREF = "                           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "BINPREF64 = "                         >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "USE_ATLAS = NO"                       >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "BUILD_HTML = YES"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "WIN = ${ARCH}"                        >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "LEA_MALLOC = YES"                        > "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "BINPREF = "                             >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "BINPREF64 = "                           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "USE_ATLAS = NO"                         >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "BUILD_HTML = YES"                       >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "WIN = ${ARCH}"                          >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     if [[ "${_debug}" == "yes" ]]; then
         echo "EOPTS = -march=${CPU} -mtune=generic -O0" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
         echo "DEBUG = 1"                                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
@@ -141,20 +141,22 @@ Mingw_w64_makefiles() {
         # -O3 is used by R by default. It might be sensible to adopt -O2 here instead?
         echo "EOPTS = -march=${CPU} -mtune=generic" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
     fi
-    echo "OPENMP = -fopenmp"                    >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "PTHREAD = -pthread"                   >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "COPY_RUNTIME_DLLS = 1"                >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "TEXI2ANY = texi2any"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "TCL_VERSION = ${TCLTK_VER}"           >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
-    echo "ISDIR = ${PWD}/isdir"                 >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "OPENMP = -fopenmp"                      >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "PTHREAD = -pthread"                     >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "COPY_RUNTIME_DLLS = 1"                  >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "TEXI2ANY = texi2any"                    >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "TCL_VERSION = ${TCLTK_VER}"             >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    echo "ISDIR = ${PWD}/isdir"                   >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
+    # This won't take and we'll force the issue at the end of the build* It's not really clear
+    # if this is the best way to achieve my goal here (shared libraries, libpng, curl etc) but
+    # it seems fairly reasonable all options considered. On other OSes, it's for '/usr/local'
+    echo "LOCAL_SOFT = \$(R_HOME)/../Library/mingw-w64" >> "${SRC_DIR}/src/gnuwin32/MkRules.local"
 
-    set -e
     # The build process copies this across if it finds it and rummaging about on
     # the website I found a file, so why not, eh?
     curl -C - -o "${SRC_DIR}/etc/curl-ca-bundle.crt" -SLO http://www.stats.ox.ac.uk/pub/Rtools/goodies/multilib/curl-ca-bundle.crt
 
     # The hoops we must jump through to get innosetup installed in an unattended way.
-    set -x
     curl -C - -o ${DLCACHE}/innoextract-1.6-windows.zip -SLO http://constexpr.org/innoextract/files/innoextract-1.6/innoextract-1.6-windows.zip
     unzip -o ${DLCACHE}/innoextract-1.6-windows.zip -d ${PWD}
     curl -C - -o ${DLCACHE}/isetup-5.5.8-unicode.exe -SLO http://files.jrsoftware.org/is/5/isetup-5.5.8-unicode.exe || true
@@ -274,12 +276,16 @@ Mingw_w64_makefiles() {
     # ~/mc3/conda-bld/work/R-revised/bin/x64/R CMD BATCH --vanilla --no-timing ~/mc3/conda-bld/work/R-revised/tests/p-r-random-tests.R ~/gd/r-language/mingw-w64-p-r-random-tests.R.win.out
     # .. I need to see if this can be repeated on other systems and reported upstream or investigated more, it is very rare and I don't think warrants holding things up.
     # echo "Running make check-all (up to 3 times, there is some flakiness in p-r-random-tests.R), this will take some time ..."
-    make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
+    # make check-all -j1 > make-check.log 2>&1 || make check-all -j1 > make-check.2.log 2>&1 || make check-all -j1 > make-check.3.log 2>&1
     cd installer
     make imagedir
     cp -Rf R-3.2.4revised "${PREFIX}"/R
     # Remove the recommeded libraries, we package them separately as-per the other platforms now.
     rm -Rf "${PREFIX}"/R/library/{MASS,lattice,Matrix,nlme,survival,boot,cluster,codetools,foreign,KernSmooth,rpart,class,nnet,spatial,mgcv}
+    # * Here we force our MSYS2/mingw-w64 sysroot to be looked in for libraies during r-packages builds.
+    for _makeconf in $(find "${PREFIX}"/R -name Makeconf); do
+        sed -i 's|LOCAL_SOFT = |LOCAL_SOFT = \$(R_HOME)/../Library/mingw-w64|g' ${_makeconf}
+    done
     return 0
 }
 

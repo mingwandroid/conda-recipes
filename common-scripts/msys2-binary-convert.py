@@ -10,10 +10,11 @@ import requests, hashlib
 import tarfile
 import tempfile
 from glob import glob
-from shutil import move
+from shutil import move, copy
 from os.path import join, isdir, exists, normpath, dirname
 from os import makedirs, getenv
 import patch
+import re
 
 def get_tar_xz(url, md5):
     tmpdir = tempfile.mkdtemp()
@@ -21,6 +22,18 @@ def get_tar_xz(url, md5):
     fname = urlparts.path.split('/')[-1]
     sig = hashlib.md5()
     tmp_tar_xz = join(tmpdir, fname)
+    if urlparts.scheme == 'file':
+        path = re.compile('^file://').sub('',url).replace('/',os.sep)
+        print('copying %s to %s' % (path, tmp_tar_xz))
+        copy(path, tmp_tar_xz)
+        with open(tmp_tar_xz, "rb") as tar_xz:
+            for block in iter(lambda: tar_xz.read(1024), b""):
+                sig.update(block)
+        if sig.hexdigest() != md5:
+            print('ERROR: md5 sum mismatch expected %s, got %s' % (md5, sig.hexdigest()))
+        print(tmp_tar_xz)
+        return tmp_tar_xz
+
     with open(tmp_tar_xz, 'wb') as tar_xz:
         response = requests.get(url, stream=True)
         for block in response.iter_content(1024):

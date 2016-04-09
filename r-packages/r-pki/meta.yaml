@@ -40,10 +40,12 @@ requirements:
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
+    - {{native}}openssl
 
   run:
     - r-base
     - r-base64enc
+    - {{native}}openssl
 
 test:
   commands:

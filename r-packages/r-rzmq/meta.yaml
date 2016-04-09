@@ -39,9 +39,11 @@ requirements:
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
+    - {{native}}zeromq
 
   run:
     - r-base
+    - {{native}}zeromq
 
 test:
   commands:

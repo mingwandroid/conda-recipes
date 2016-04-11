@@ -99,7 +99,7 @@ Mingw_w64_autotools() {
 Mingw_w64_makefiles() {
     local _use_msys2_mingw_w64_tcltk=yes
     local _use_w32tex=no
-    local _debug=yes
+    local _debug=no
 
     # Instead of copying a MkRules.dist file to MkRules.local
     # just create one with the options we know our toolchains

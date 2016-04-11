@@ -33,6 +33,7 @@ build:
 requirements:
   build:
     - r-base
+    - {{posix}}base       # [win]
     - {{posix}}git        # [win]
     - r-rjsonio >=0.8_2
     - r-rcpp

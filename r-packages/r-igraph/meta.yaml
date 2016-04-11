@@ -43,6 +43,8 @@ requirements:
     - {{posix}}zip        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
+    - {{native}}gmp       # [win]
+    - {{native}}libxml2   # [win]
 
   run:
     - r-base
@@ -50,6 +52,8 @@ requirements:
     - r-nmf
     - r-irlba
     - r-magrittr
+    - {{native}}gmp       # [win]
+    - {{native}}libxml2   # [win]
 
 test:
   commands:

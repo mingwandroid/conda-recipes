@@ -10,7 +10,7 @@ package:
 source:
 
 
-  git_url: https://github.com/RevolutionAnalytics/rmr2
+  git_url: https://github.com/RevolutionAnalytics/rmr2/
   git_tag: 3.3.1
   # You can add a hash for the file here, like md5 or sha1
   # md5: 49448ba4863157652311cc5ea4fea3ea
@@ -29,7 +29,7 @@ build:
     - lib/R/lib/
     - lib/
 
-# Suggests: quickcheck
+# Suggests: quickcheck (>= 3.0.0), ravro, rhdfs, testthat
 requirements:
   build:
     - r-base
@@ -37,6 +37,7 @@ requirements:
     - {{posix}}git        # [win]
     - r-rjsonio >=0.8_2
     - r-rcpp
+    - r-catools >=1.16
     - r-digest
     - r-functional
     - r-plyr
@@ -47,6 +48,7 @@ requirements:
     - r-base
     - r-rjsonio >=0.8_2
     - r-rcpp
+    - r-catools >=1.16
     - r-digest
     - r-functional
     - r-plyr
@@ -70,20 +72,24 @@ about:
   license: Apache License (== 2.0)
   summary: Supports the map reduce programming model on top of hadoop streaming
   license_family: Apache
+
 # The original CRAN metadata for this package was:
 
 # Package: rmr2
 # Type: Package
 # Title: R and Hadoop Streaming Connector
-# Version: 2.1.0
-# Date: 2013-2-22
+# Version: 3.3.1
+# Date: 2015-2-10
 # Author: Revolution Analytics
-# Depends: R (>= 2.6.0), Rcpp, RJSONIO (>= 0.8-2),  digest, functional, stringr, plyr, reshape2
-# Suggests: quickcheck
-# Collate: basic.R keyval.R IO.R local.R streaming.R mapreduce.R extras.R quickcheck-rmr.R parse-url.R
+# Depends: R (>= 2.6.0), methods
+# Imports: Rcpp, RJSONIO (>= 0.8-2), digest, functional, reshape2, stringr, plyr, caTools (>= 1.16)
+# Suggests: quickcheck (>= 3.0.0), ravro, rhdfs, testthat
+# Collate: basic.R extras.R hdfs.R keyval.R IO.R local.R mapreduce.R parse-url.R quickcheck-rmr.R streaming.R
 # Maintainer: Revolution Analytics <rhadoop@revolutionanalytics.com>
 # Description: Supports the map reduce programming model on top of hadoop streaming
 # License: Apache License (== 2.0)
+# ByteCompile: TRUE
+# BuildVignettes: FALSE
 
 # See
 # http://docs.continuum.io/conda/build.html for

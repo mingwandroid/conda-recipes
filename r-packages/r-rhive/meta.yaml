@@ -33,6 +33,8 @@ build:
 requirements:
   build:
     - r-base
+    - {{posix}}base       # [win]
+    - {{posix}}git        # [win]
     - r-rserve >=0.6_0
     - r-rjava >=0.9_0
 

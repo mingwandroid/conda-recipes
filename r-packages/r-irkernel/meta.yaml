@@ -33,6 +33,8 @@ build:
 requirements:
   build:
     - r-base
+    - {{posix}}base       # [win]
+    - {{posix}}git        # [win]
     - r-irdisplay
     - r-digest
     - r-evaluate >=0.5.4

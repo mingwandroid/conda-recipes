@@ -33,6 +33,8 @@ build:
 requirements:
   build:
     - r-base
+    - {{posix}}base       # [win]
+    - {{posix}}git        # [win]
     - r-base64enc
     - r-repr
 

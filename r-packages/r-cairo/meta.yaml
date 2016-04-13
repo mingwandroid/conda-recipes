@@ -39,6 +39,7 @@ requirements:
     - r-base
     - {{posix}}base       # [win]
     - {{posix}}zip        # [win]
+    - {{posix}}tar        # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
     - cairo               # [not win]

@@ -3,7 +3,7 @@ package:
   version: 0.19.7
 source:
   url: http://repo.msys2.org/msys/sources/libgettextpo-0.19.7-3.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '3'
 requirements:
@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libgettextpo
       url: http://repo.msys2.org/msys/i686/libgettextpo-0.19.7-3-i686.pkg.tar.xz
       md5: a16ae1e65b48e08157db04aecd0f0baa
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libgettextpo
       url: http://repo.msys2.org/msys/x86_64/libgettextpo-0.19.7-3-x86_64.pkg.tar.xz
       md5: a9eabe7c44ff05aea2b35d8c1bbcc463
       mv-src: '*'

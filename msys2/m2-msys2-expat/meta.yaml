@@ -10,16 +10,18 @@ requirements:
   run: []
 about:
   home: http://expat.sourceforge.net/
-  license: GPL (msys-2.0.dll linkage), custom
+  license: GPL, custom
   summary: An XML parser library
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/expat
       url: http://repo.msys2.org/msys/i686/expat-2.1.1-1-i686.pkg.tar.xz
       md5: aca41fefeb19379c6c35ed13fa1f6454
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/expat
       url: http://repo.msys2.org/msys/x86_64/expat-2.1.1-1-x86_64.pkg.tar.xz
       md5: d001c807fc7b6347b9bd6e522ba7e39d
       mv-src: '*'

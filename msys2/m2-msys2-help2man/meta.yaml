@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/help2man
       url: http://repo.msys2.org/msys/i686/help2man-1.47.3-1-i686.pkg.tar.xz
       md5: 734cbfcb1c7e193e1bc344413ca291d5
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/help2man
       url: http://repo.msys2.org/msys/x86_64/help2man-1.47.3-1-x86_64.pkg.tar.xz
       md5: 4334b7d9fb5896dc8ee18e8f304db425
       mv-src: '*'

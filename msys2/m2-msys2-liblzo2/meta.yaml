@@ -3,7 +3,7 @@ package:
   version: '2.09'
 source:
   url: http://repo.msys2.org/msys/sources/liblzo2-2.09-1.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '1'
 requirements:
@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/liblzo2
       url: http://repo.msys2.org/msys/i686/liblzo2-2.09-1-i686.pkg.tar.xz
       md5: 90f49cbb41cd1a14ca724e0631e6ee65
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/liblzo2
       url: http://repo.msys2.org/msys/x86_64/liblzo2-2.09-1-x86_64.pkg.tar.xz
       md5: 05c456840a51b5930d9d617c8f6f53be
       mv-src: '*'

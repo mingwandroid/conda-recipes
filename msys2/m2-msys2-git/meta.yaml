@@ -23,16 +23,18 @@ requirements:
   - m2-msys2-perl-termreadkey
 about:
   home: https://git-scm.com/
-  license: GPL (msys-2.0.dll linkage), GPL2
+  license: GPL, GPL2
   summary: The fast distributed version control system
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/git
       url: http://repo.msys2.org/msys/i686/git-2.8.1-1-i686.pkg.tar.xz
       md5: 782a7ddddc879710f7368c7a34df9b53
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/git
       url: http://repo.msys2.org/msys/x86_64/git-2.8.1-1-x86_64.pkg.tar.xz
       md5: 3542d6c3555e037cf990bc9b5915fd36
       mv-src: '*'

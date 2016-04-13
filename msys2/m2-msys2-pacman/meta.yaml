@@ -1,9 +1,9 @@
 package:
   name: m2-msys2-pacman
-  version: 5.0.1.6391.cdeb8ff
+  version: 5.0.1.6403.520736d
 source:
-  url: http://repo.msys2.org/msys/sources/pacman-5.0.1.6391.cdeb8ff-1.src.tar.gz
-  md5: 5ddb164f84f93480b8f7962129356e9e
+  url: http://repo.msys2.org/msys/sources/pacman-5.0.1.6403.520736d-1.src.tar.gz
+  md5: ac16ddeae0f7eac4286e3762b865d2ac
 build:
   number: '1'
 requirements:
@@ -25,12 +25,14 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/pacman-5.0.1.6391.6f124b6-1-i686.pkg.tar.xz
-      md5: c017a7612dd5c958007cf4dd617b51b5
+      srcpkg: msys/pacman
+      url: http://repo.msys2.org/msys/i686/pacman-5.0.1.6403.07ca798-1-i686.pkg.tar.xz
+      md5: 5dd05ff5579f9200ae578ed9988e724e
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/pacman-5.0.1.6391.cdeb8ff-1-x86_64.pkg.tar.xz
-      md5: 6728d4e4373b51eb0f7676170963ae24
+      srcpkg: msys/pacman
+      url: http://repo.msys2.org/msys/x86_64/pacman-5.0.1.6403.520736d-1-x86_64.pkg.tar.xz
+      md5: 862f407dd20e9b394a0f8b3b877f48bd
       mv-src: '*'
       mv-dst: Library/

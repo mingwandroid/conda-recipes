@@ -1,9 +1,9 @@
 package:
   name: m2-msys2-glib2
-  version: 2.44.1
+  version: 2.48.0
 source:
-  url: http://repo.msys2.org/msys/sources/glib2-2.44.1-1.src.tar.gz
-  md5: b70177e1fe417c75f6a8bebe24a082f3
+  url: http://repo.msys2.org/msys/sources/glib2-2.48.0-1.src.tar.gz
+  md5: b9946b5bf97968ec0ab02d0d5626d30e
 build:
   number: '1'
 requirements:
@@ -15,17 +15,19 @@ requirements:
   - m2-msys2-zlib
 about:
   home: http://www.gtk.org/
-  license: GPL (msys-2.0.dll linkage), LGPL
+  license: GPL, LGPL
   summary: Common C routines used by GTK+ and other libs
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/glib2-2.44.1-1-i686.pkg.tar.xz
-      md5: 4dea1ac082e576c90cd2f8aaa39f2597
+      srcpkg: msys/glib2
+      url: http://repo.msys2.org/msys/i686/glib2-2.48.0-1-i686.pkg.tar.xz
+      md5: 36d97b84b2bc0555ed31a29be10c1f8d
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/glib2-2.44.1-1-x86_64.pkg.tar.xz
-      md5: f29cc32c9068106e71217627b4459656
+      srcpkg: msys/glib2
+      url: http://repo.msys2.org/msys/x86_64/glib2-2.48.0-1-x86_64.pkg.tar.xz
+      md5: 51bf474ca7f9e8090c0e6bb3204b7aee
       mv-src: '*'
       mv-dst: Library/

@@ -12,16 +12,18 @@ requirements:
   - m2-msys2-libintl
 about:
   home: http://www.gnu.org/software/findutils
-  license: GPL (msys-2.0.dll linkage), GPL3
+  license: GPL, GPL3
   summary: GNU utilities to locate files
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/findutils
       url: http://repo.msys2.org/msys/i686/findutils-4.6.0-1-i686.pkg.tar.xz
       md5: 836ebf559cc22e4d0574ccd929d2f3e1
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/findutils
       url: http://repo.msys2.org/msys/x86_64/findutils-4.6.0-1-x86_64.pkg.tar.xz
       md5: 494723cfd9d52231dde5d746fc948851
       mv-src: '*'

@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-Net-SMTP-SSL
       url: http://repo.msys2.org/msys/i686/perl-Net-SMTP-SSL-1.02-1-any.pkg.tar.xz
       md5: 61eed7bb3b7e926b92858683a32b3ccb
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-Net-SMTP-SSL
       url: http://repo.msys2.org/msys/x86_64/perl-Net-SMTP-SSL-1.02-1-any.pkg.tar.xz
       md5: f78a2310abd8803f3687587dcf4c4c4a
       mv-src: '*'

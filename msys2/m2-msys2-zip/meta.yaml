@@ -11,16 +11,18 @@ requirements:
   - m2-msys2-libbz2
 about:
   home: http://www.info-zip.org/Zip.html
-  license: GPL (msys-2.0.dll linkage), BSD
+  license: GPL, BSD
   summary: Creates PKZIP-compatible .zip files
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/zip
       url: http://repo.msys2.org/msys/i686/zip-3.0-1-i686.pkg.tar.xz
       md5: a45b3f9b6df5df50d430c19c4ba4d415
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/zip
       url: http://repo.msys2.org/msys/x86_64/zip-3.0-1-x86_64.pkg.tar.xz
       md5: a900d1cb58df2bd940b56bbfdb537c0c
       mv-src: '*'

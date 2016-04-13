@@ -3,7 +3,7 @@ package:
   version: 2.9.2
 source:
   url: http://repo.msys2.org/msys/sources/libxml2-2.9.2-2.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '2'
 requirements:
@@ -15,16 +15,18 @@ requirements:
   - m2-msys2-zlib
 about:
   home: http://www.xmlsoft.org/
-  license: GPL (msys-2.0.dll linkage), MIT
+  license: GPL, MIT
   summary: XML parsing library, version 2
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libxml2
       url: http://repo.msys2.org/msys/i686/libxml2-2.9.2-2-i686.pkg.tar.xz
       md5: 435949d5878c5ca331e62dbb2690188c
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libxml2
       url: http://repo.msys2.org/msys/x86_64/libxml2-2.9.2-2-x86_64.pkg.tar.xz
       md5: aed627dd7d5e17e7786be0015e70b8fe
       mv-src: '*'

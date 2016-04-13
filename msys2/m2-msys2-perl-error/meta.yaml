@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-Error
       url: http://repo.msys2.org/msys/i686/perl-Error-0.17024-1-any.pkg.tar.xz
       md5: a954bace66c7ece3c5f617a5fb606000
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-Error
       url: http://repo.msys2.org/msys/x86_64/perl-Error-0.17024-1-any.pkg.tar.xz
       md5: c9488513b1f524ef0213d89253c67924
       mv-src: '*'

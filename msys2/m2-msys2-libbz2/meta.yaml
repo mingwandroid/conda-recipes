@@ -11,16 +11,18 @@ requirements:
   - m2-msys2-gcc-libs
 about:
   home: http://sources.redhat.com/bzip2
-  license: GPL (msys-2.0.dll linkage), custom
+  license: GPL, custom
   summary: A high-quality data compression program
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libbz2
       url: http://repo.msys2.org/msys/i686/libbz2-1.0.6-2-i686.pkg.tar.xz
       md5: 5c51495c143e3b581bd680513815009c
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libbz2
       url: http://repo.msys2.org/msys/x86_64/libbz2-1.0.6-2-x86_64.pkg.tar.xz
       md5: 7ce9693d119c727a01b8c54685f913f4
       mv-src: '*'

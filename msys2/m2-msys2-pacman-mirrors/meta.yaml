@@ -15,11 +15,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/pacman-mirrors
       url: http://repo.msys2.org/msys/i686/pacman-mirrors-20160112-1-any.pkg.tar.xz
       md5: eb4f26206b43f338752cd95e3c561b4f
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/pacman-mirrors
       url: http://repo.msys2.org/msys/x86_64/pacman-mirrors-20160112-1-any.pkg.tar.xz
       md5: 6a4c6d1d485f35972d0e8809e1c31e47
       mv-src: '*'

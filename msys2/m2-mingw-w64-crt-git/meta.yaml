@@ -1,9 +1,9 @@
 package:
   name: m2-mingw-w64-crt-git
-  version: 5.0.0.4627.03684c4
+  version: 5.0.0.4636.2595836
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-crt-git-5.0.0.4627.03684c4-1.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-crt-git-5.0.0.4636.2595836-1.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '1'
 requirements:
@@ -16,12 +16,14 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-crt-git-5.0.0.4627.d55f21d-1-any.pkg.tar.xz
-      md5: 792817e39252a19a766a224c7b3c819c
+      srcpkg: mingw32/mingw-w64-i686-crt-git
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-crt-git-5.0.0.4636.f97302f-1-any.pkg.tar.xz
+      md5: 4377ceff6d25f02b68532dafd7e41b47
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-crt-git-5.0.0.4627.03684c4-1-any.pkg.tar.xz
-      md5: f02843063845c72e36f7b66079793255
+      srcpkg: mingw64/mingw-w64-x86_64-crt-git
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-crt-git-5.0.0.4636.2595836-1-any.pkg.tar.xz
+      md5: aa19d9a1d9249331bf215674d1e2042f
       mv-src: mingw64
       mv-dst: Library/mingw-w64

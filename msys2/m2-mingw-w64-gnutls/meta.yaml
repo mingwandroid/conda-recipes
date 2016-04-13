@@ -1,9 +1,9 @@
 package:
   name: m2-mingw-w64-gnutls
-  version: 3.4.10
+  version: 3.4.11
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-gnutls-3.4.10-1.src.tar.gz
-  md5: 2f45cec7f2258cc1b0929c7cfa5356c4
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-gnutls-3.4.11-1.src.tar.gz
+  md5: 0d6cc3f4491575ad3ccf0655017cb5a6
 build:
   number: '1'
 requirements:
@@ -24,12 +24,14 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gnutls-3.4.10-1-any.pkg.tar.xz
-      md5: 7f53a325af4306b17fa2b405b0c7d694
+      srcpkg: mingw32/mingw-w64-i686-gnutls
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gnutls-3.4.11-1-any.pkg.tar.xz
+      md5: c47b5c2488982ea198333cc93d01012f
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gnutls-3.4.10-1-any.pkg.tar.xz
-      md5: 9dabaf559a6af490cdbe9c5a6e2f8301
+      srcpkg: mingw64/mingw-w64-x86_64-gnutls
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gnutls-3.4.11-1-any.pkg.tar.xz
+      md5: 39334e4b3553eb1186db8b717986316a
       mv-src: mingw64
       mv-dst: Library/mingw-w64

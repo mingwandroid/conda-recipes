@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/bash
       url: http://repo.msys2.org/msys/i686/bash-4.3.042-4-i686.pkg.tar.xz
       md5: f500e98783fc0d0b4f443d91889ab0d3
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/bash
       url: http://repo.msys2.org/msys/x86_64/bash-4.3.042-4-x86_64.pkg.tar.xz
       md5: 974802d3710643a0462fa9dce2a7d923
       mv-src: '*'

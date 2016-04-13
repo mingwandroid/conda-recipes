@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-Encode-Locale
       url: http://repo.msys2.org/msys/i686/perl-Encode-Locale-1.04-1-any.pkg.tar.xz
       md5: db955b95d1ebf2f2597ba3097c96e126
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-Encode-Locale
       url: http://repo.msys2.org/msys/x86_64/perl-Encode-Locale-1.04-1-any.pkg.tar.xz
       md5: 8b85775f64ab0ab320ad19fae9fe869c
       mv-src: '*'

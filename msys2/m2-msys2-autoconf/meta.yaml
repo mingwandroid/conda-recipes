@@ -3,7 +3,7 @@ package:
   version: '2.69'
 source:
   url: http://repo.msys2.org/msys/sources/autoconf-2.69-3.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '3'
 requirements:
@@ -15,16 +15,18 @@ requirements:
   - m2-msys2-perl
 about:
   home: http://www.gnu.org/software/autoconf
-  license: GPL (msys-2.0.dll linkage), GPL2, GPL3, custom
+  license: GPL, GPL2, GPL3, custom
   summary: A GNU tool for automatically configuring source code
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/autoconf
       url: http://repo.msys2.org/msys/i686/autoconf-2.69-3-any.pkg.tar.xz
       md5: 3c7e24fad3a5c6b4f1142fb9c13da84d
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/autoconf
       url: http://repo.msys2.org/msys/x86_64/autoconf-2.69-3-any.pkg.tar.xz
       md5: 04671aefcd2adc211b0b482043bba9e4
       mv-src: '*'

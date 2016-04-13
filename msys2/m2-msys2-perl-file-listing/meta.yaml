@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-File-Listing
       url: http://repo.msys2.org/msys/i686/perl-File-Listing-6.04-2-any.pkg.tar.xz
       md5: 64edfe003f576a0669f5665febbe004e
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-File-Listing
       url: http://repo.msys2.org/msys/x86_64/perl-File-Listing-6.04-2-any.pkg.tar.xz
       md5: 7da75c747163fc6e71497aaf407df34a
       mv-src: '*'

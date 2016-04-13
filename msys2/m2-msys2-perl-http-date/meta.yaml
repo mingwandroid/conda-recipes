@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-HTTP-Date
       url: http://repo.msys2.org/msys/i686/perl-HTTP-Date-6.02-2-any.pkg.tar.xz
       md5: a8429c98cb6522d62d0f7eca607352cb
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-HTTP-Date
       url: http://repo.msys2.org/msys/x86_64/perl-HTTP-Date-6.02-2-any.pkg.tar.xz
       md5: ebcc88b985678f59591cb2f776b088c3
       mv-src: '*'

@@ -2,10 +2,10 @@ package:
   name: m2-mingw-w64-libxml2
   version: 2.9.3
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-libxml2-2.9.3-1.src.tar.gz
-  md5: 1acb47bd2c674a0ca53952cd3367aaff
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-libxml2-2.9.3-2.src.tar.gz
+  md5: 77805e10593a41f2de3b886a3b9423d6
 build:
-  number: '1'
+  number: '2'
 requirements:
   run:
   - m2-mingw-w64-gcc-libs
@@ -19,12 +19,14 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-libxml2-2.9.3-1-any.pkg.tar.xz
-      md5: 7815dc6a58848250511bdb6b3266f760
+      srcpkg: mingw32/mingw-w64-i686-libxml2
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-libxml2-2.9.3-2-any.pkg.tar.xz
+      md5: 7ed8f48ae2c23de289a242d6794c7cda
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libxml2-2.9.3-1-any.pkg.tar.xz
-      md5: 06cc4d4d30e7df0b38916a836ec6fbbf
+      srcpkg: mingw64/mingw-w64-x86_64-libxml2
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libxml2-2.9.3-2-any.pkg.tar.xz
+      md5: a0ca811b3fa42316e3b92bd00af186df
       mv-src: mingw64
       mv-dst: Library/mingw-w64

@@ -12,16 +12,18 @@ requirements:
   - m2-msys2-zlib
 about:
   home: https://www.openssl.org
-  license: GPL (msys-2.0.dll linkage), custom:BSD
+  license: GPL, custom:BSD
   summary: The Open Source toolkit for Secure Sockets Layer and Transport Layer Security
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/openssl
       url: http://repo.msys2.org/msys/i686/openssl-1.0.2.g-1-i686.pkg.tar.xz
       md5: 737f7b0335571846fa7bdcf1566328e6
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/openssl
       url: http://repo.msys2.org/msys/x86_64/openssl-1.0.2.g-1-x86_64.pkg.tar.xz
       md5: f21d4da1fa35140029905b664e7bca7f
       mv-src: '*'

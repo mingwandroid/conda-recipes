@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: mingw32/mingw-w64-i686-zlib
       url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-zlib-1.2.8-9-any.pkg.tar.xz
       md5: 87c65e9b2930436a75dfd7d459ae98cb
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
+      srcpkg: mingw64/mingw-w64-x86_64-zlib
       url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-zlib-1.2.8-9-any.pkg.tar.xz
       md5: 60c3a388478f411b7a0908441ebeb537
       mv-src: mingw64

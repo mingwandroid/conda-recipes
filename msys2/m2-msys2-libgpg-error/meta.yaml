@@ -14,16 +14,18 @@ requirements:
   - m2-msys2-libintl
 about:
   home: http://www.gnupg.org
-  license: GPL (msys-2.0.dll linkage), LGPL
+  license: GPL, LGPL
   summary: Support library for libgcrypt
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libgpg-error
       url: http://repo.msys2.org/msys/i686/libgpg-error-1.21-1-i686.pkg.tar.xz
       md5: 624acd8659229ed56ca75c098dffc423
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libgpg-error
       url: http://repo.msys2.org/msys/x86_64/libgpg-error-1.21-1-x86_64.pkg.tar.xz
       md5: d11a28ac0347530fc41acc7d28e23ece
       mv-src: '*'

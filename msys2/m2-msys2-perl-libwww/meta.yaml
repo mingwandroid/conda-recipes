@@ -28,11 +28,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-libwww
       url: http://repo.msys2.org/msys/i686/perl-libwww-6.13-1-any.pkg.tar.xz
       md5: acde07b93a969922d01c3fa70823a7ba
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-libwww
       url: http://repo.msys2.org/msys/x86_64/perl-libwww-6.13-1-any.pkg.tar.xz
       md5: 301d32a11498ff5e1c8687a2a1911ea7
       mv-src: '*'

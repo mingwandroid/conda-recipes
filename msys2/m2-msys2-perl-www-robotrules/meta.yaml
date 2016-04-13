@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-WWW-RobotRules
       url: http://repo.msys2.org/msys/i686/perl-WWW-RobotRules-6.02-2-any.pkg.tar.xz
       md5: e3b5ab77d5979233438388dbe182444e
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-WWW-RobotRules
       url: http://repo.msys2.org/msys/x86_64/perl-WWW-RobotRules-6.02-2-any.pkg.tar.xz
       md5: 83a4d6b4a168c26c383f07ea4725f4e3
       mv-src: '*'

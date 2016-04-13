@@ -3,7 +3,7 @@ package:
   version: 3.1.2
 source:
   url: http://repo.msys2.org/msys/sources/libarchive-3.1.2-5.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '5'
 requirements:
@@ -18,16 +18,18 @@ requirements:
   - m2-msys2-zlib
 about:
   home: http://libarchive.org/
-  license: GPL (msys-2.0.dll linkage), BSD
+  license: GPL, BSD
   summary: library that can create and read several streaming archive formats
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libarchive
       url: http://repo.msys2.org/msys/i686/libarchive-3.1.2-5-i686.pkg.tar.xz
       md5: 3f04117cda5c925119b43cc9b7fd2978
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libarchive
       url: http://repo.msys2.org/msys/x86_64/libarchive-3.1.2-5-x86_64.pkg.tar.xz
       md5: c3f29be3563f33237cc14d38beed0523
       mv-src: '*'

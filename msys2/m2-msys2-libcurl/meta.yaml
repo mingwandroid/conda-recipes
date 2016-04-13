@@ -18,16 +18,18 @@ requirements:
   - m2-msys2-zlib
 about:
   home: https://curl.haxx.se
-  license: GPL (msys-2.0.dll linkage), MIT
+  license: GPL, MIT
   summary: Multi-protocol file transfer library (runtime)
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libcurl
       url: http://repo.msys2.org/msys/i686/libcurl-7.47.1-2-i686.pkg.tar.xz
       md5: 221b4f9339b7332b35a14ac647d1e6be
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libcurl
       url: http://repo.msys2.org/msys/x86_64/libcurl-7.47.1-2-x86_64.pkg.tar.xz
       md5: 7fd2cf4bea3bba74f7123aff01d6d0f8
       mv-src: '*'

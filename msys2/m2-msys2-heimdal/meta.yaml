@@ -11,16 +11,18 @@ requirements:
   - m2-msys2-heimdal-libs
 about:
   home: https://www.h5l.org/
-  license: GPL (msys-2.0.dll linkage), custom
+  license: GPL, custom
   summary: Implementation of Kerberos V5 libraries
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/heimdal
       url: http://repo.msys2.org/msys/i686/heimdal-1.5.3-9-i686.pkg.tar.xz
       md5: a822b511e19d402504762124eb8c3d91
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/heimdal
       url: http://repo.msys2.org/msys/x86_64/heimdal-1.5.3-9-x86_64.pkg.tar.xz
       md5: 6a38525fe5bc03ac551056165763b34a
       mv-src: '*'

@@ -18,11 +18,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-IO-Socket-SSL
       url: http://repo.msys2.org/msys/i686/perl-IO-Socket-SSL-2.016-1-any.pkg.tar.xz
       md5: c128aed19387f5096d49449909136f3a
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-IO-Socket-SSL
       url: http://repo.msys2.org/msys/x86_64/perl-IO-Socket-SSL-2.016-1-any.pkg.tar.xz
       md5: 7d6922263168714570dd239047a8e7b5
       mv-src: '*'

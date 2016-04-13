@@ -18,11 +18,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-MIME-tools
       url: http://repo.msys2.org/msys/i686/perl-MIME-tools-5.506-1-any.pkg.tar.xz
       md5: e941c123716f70cad2aa3b0b46e89fe6
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-MIME-tools
       url: http://repo.msys2.org/msys/x86_64/perl-MIME-tools-5.506-1-any.pkg.tar.xz
       md5: 44587a96ee80677f8870e868f05fbb7f
       mv-src: '*'

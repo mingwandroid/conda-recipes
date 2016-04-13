@@ -1,11 +1,11 @@
 package:
   name: m2-mingw-w64-pcre
-  version: '8.37'
+  version: '8.38'
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-pcre-8.37-2.src.tar.gz
-  md5: 936524317a13f7da01ff4676bdb271e2
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-pcre-8.38-1.src.tar.gz
+  md5: e1d8571c124870133b642e2fd3a830e5
 build:
-  number: '2'
+  number: '1'
 requirements:
   run:
   - m2-mingw-w64-gcc-libs
@@ -19,12 +19,14 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-pcre-8.37-2-any.pkg.tar.xz
-      md5: f87e7c00bd713b41e1787e9172beebdd
+      srcpkg: mingw32/mingw-w64-i686-pcre
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-pcre-8.38-1-any.pkg.tar.xz
+      md5: f700b9234efd41ffa3e97ff1c834d134
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-pcre-8.37-2-any.pkg.tar.xz
-      md5: 351bdf7b78ee5da2e524986c89b0a83e
+      srcpkg: mingw64/mingw-w64-x86_64-pcre
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-pcre-8.38-1-any.pkg.tar.xz
+      md5: b67e2e09f64ff708564a0f1fc901f8a6
       mv-src: mingw64
       mv-dst: Library/mingw-w64

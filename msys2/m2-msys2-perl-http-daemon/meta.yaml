@@ -19,11 +19,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-HTTP-Daemon
       url: http://repo.msys2.org/msys/i686/perl-HTTP-Daemon-6.01-2-any.pkg.tar.xz
       md5: 7cc608a455b7b47a50ff25273c1ee9b0
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-HTTP-Daemon
       url: http://repo.msys2.org/msys/x86_64/perl-HTTP-Daemon-6.01-2-any.pkg.tar.xz
       md5: b5acfb87dbeec408b0277278a77a2191
       mv-src: '*'

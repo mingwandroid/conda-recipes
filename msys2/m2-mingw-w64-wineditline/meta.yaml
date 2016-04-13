@@ -15,11 +15,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: mingw32/mingw-w64-i686-wineditline
       url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-wineditline-2.101-4-any.pkg.tar.xz
       md5: 76851d61f1c6ef55d44c7054755bec56
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
+      srcpkg: mingw64/mingw-w64-x86_64-wineditline
       url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-wineditline-2.101-4-any.pkg.tar.xz
       md5: 7c7cbf51bc21b60815d4be21dfe04f6f
       mv-src: mingw64

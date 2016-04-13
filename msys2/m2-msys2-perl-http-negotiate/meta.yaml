@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-HTTP-Negotiate
       url: http://repo.msys2.org/msys/i686/perl-HTTP-Negotiate-6.01-2-any.pkg.tar.xz
       md5: a80e0dfe4dabb71164cf17f5ba3b76b0
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-HTTP-Negotiate
       url: http://repo.msys2.org/msys/x86_64/perl-HTTP-Negotiate-6.01-2-any.pkg.tar.xz
       md5: 854c6bb97a68a947c9c590855d08ebb9
       mv-src: '*'

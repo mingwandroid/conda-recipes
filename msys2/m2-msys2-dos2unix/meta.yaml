@@ -11,16 +11,18 @@ requirements:
   - m2-msys2-libintl
 about:
   home: http://waterlan.home.xs4all.nl/dos2unix.html
-  license: GPL (msys-2.0.dll linkage), BSD
+  license: GPL, BSD
   summary: Text file format converter
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/dos2unix
       url: http://repo.msys2.org/msys/i686/dos2unix-7.3.3-1-i686.pkg.tar.xz
       md5: 34433f3b43a8a227e5c890746fb45cf5
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/dos2unix
       url: http://repo.msys2.org/msys/x86_64/dos2unix-7.3.3-1-x86_64.pkg.tar.xz
       md5: 94466090b8ab662df811c10e621faf83
       mv-src: '*'

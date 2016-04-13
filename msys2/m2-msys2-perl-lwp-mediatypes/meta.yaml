@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-LWP-MediaTypes
       url: http://repo.msys2.org/msys/i686/perl-LWP-MediaTypes-6.02-2-any.pkg.tar.xz
       md5: c8bed90d2b94828f69b276d3b2b26c08
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-LWP-MediaTypes
       url: http://repo.msys2.org/msys/x86_64/perl-LWP-MediaTypes-6.02-2-any.pkg.tar.xz
       md5: 133f1ce26030dee956eb497962d8b8da
       mv-src: '*'

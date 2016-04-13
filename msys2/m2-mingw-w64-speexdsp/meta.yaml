@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: mingw32/mingw-w64-i686-speexdsp
       url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-speexdsp-1.2rc3-2-any.pkg.tar.xz
       md5: f2e6ef95c370ec58e4d3ff685440bd66
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
+      srcpkg: mingw64/mingw-w64-x86_64-speexdsp
       url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-speexdsp-1.2rc3-2-any.pkg.tar.xz
       md5: e1f7c35dc821e41cf28b5e419b9b675b
       mv-src: mingw64

@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/p7zip
       url: http://repo.msys2.org/msys/i686/p7zip-9.38.1-1-i686.pkg.tar.xz
       md5: f200424a6cbaa6a38b74e9a095892254
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/p7zip
       url: http://repo.msys2.org/msys/x86_64/p7zip-9.38.1-1-x86_64.pkg.tar.xz
       md5: 759b94e8ec83a9c2726e8f2e87bd40d3
       mv-src: '*'

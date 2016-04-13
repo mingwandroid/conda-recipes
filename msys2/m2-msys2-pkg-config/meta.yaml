@@ -1,27 +1,29 @@
 package:
   name: m2-msys2-pkg-config
-  version: '0.28'
+  version: 0.29.1
 source:
-  url: http://repo.msys2.org/msys/sources/pkg-config-0.28-2.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/msys/sources/pkg-config-0.29.1-1.src.tar.gz
+  md5: a17001f49b9c3b198ea026afaf28a418
 build:
-  number: '2'
+  number: '1'
 requirements:
   run:
   - m2-msys2-glib2
 about:
-  home: http://pkgconfig.freedesktop.org/wiki/
+  home: https://www.freedesktop.org/wiki/Software/pkg-config/
   license: GPL
   summary: A system for managing library compile/link flags
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/pkg-config-0.28-2-i686.pkg.tar.xz
-      md5: 81bfe943c748e121c90e3b770012a5fc
+      srcpkg: msys/pkg-config
+      url: http://repo.msys2.org/msys/i686/pkg-config-0.29.1-1-i686.pkg.tar.xz
+      md5: d97e8a7b6dd2ea533312801608a5da50
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/pkg-config-0.28-2-x86_64.pkg.tar.xz
-      md5: f70b5c46de4021d50d03463c72cc4e9a
+      srcpkg: msys/pkg-config
+      url: http://repo.msys2.org/msys/x86_64/pkg-config-0.29.1-1-x86_64.pkg.tar.xz
+      md5: 048fd7fbc70f46932364acd28c8ff599
       mv-src: '*'
       mv-dst: Library/

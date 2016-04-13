@@ -13,16 +13,18 @@ requirements:
   - m2-msys2-bash
 about:
   home: http://www.thrysoee.dk/editline/
-  license: GPL (msys-2.0.dll linkage), BSD
+  license: GPL, BSD
   summary: Libedit is an autotool- and libtoolized port of the NetBSD Editline library.
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libedit
       url: http://repo.msys2.org/msys/i686/libedit-3.1-20150325-i686.pkg.tar.xz
       md5: c3edad631870c021e1d458a5f2ce2b6f
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libedit
       url: http://repo.msys2.org/msys/x86_64/libedit-3.1-20150325-x86_64.pkg.tar.xz
       md5: 24ef02a0aa1dd88c6eebdadf3be00b20
       mv-src: '*'

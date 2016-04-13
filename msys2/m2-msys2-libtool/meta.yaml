@@ -2,28 +2,30 @@ package:
   name: m2-msys2-libtool
   version: 2.4.6
 source:
-  url: http://repo.msys2.org/msys/sources/libtool-2.4.6-1.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/msys/sources/libtool-2.4.6-2.src.tar.gz
+  md5: fe0cd89e1b9f1d7cc19dc3ec1d400c78
 build:
-  number: '1'
+  number: '2'
 requirements:
   run:
   - m2-msys2-bash
   - m2-msys2-libltdl
   - m2-msys2-tar
 about:
-  home: http://www.gnu.org/software/libtool
+  home: https://www.gnu.org/software/libtool
   license: GPL
   summary: A generic library support script
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/msys/i686/libtool-2.4.6-1-i686.pkg.tar.xz
-      md5: 2a5708f67b7bf0fe9590ef6df48f1952
+      srcpkg: msys/libtool
+      url: http://repo.msys2.org/msys/i686/libtool-2.4.6-2-i686.pkg.tar.xz
+      md5: 219f25ae4564dc11fac7226b2b0626c5
       mv-src: '*'
       mv-dst: Library/
     win-64:
-      url: http://repo.msys2.org/msys/x86_64/libtool-2.4.6-1-x86_64.pkg.tar.xz
-      md5: 849aef04bcaeb6503792e215ea2c1e06
+      srcpkg: msys/libtool
+      url: http://repo.msys2.org/msys/x86_64/libtool-2.4.6-2-x86_64.pkg.tar.xz
+      md5: 8c8a32ba07ee3984de6d040fe6baa9d8
       mv-src: '*'
       mv-dst: Library/

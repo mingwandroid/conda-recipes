@@ -3,7 +3,7 @@ package:
   version: 1.7.9
 source:
   url: http://repo.msys2.org/msys/sources/automake1.7-1.7.9-2.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
   number: '2'
 requirements:
@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/automake1.7
       url: http://repo.msys2.org/msys/i686/automake1.7-1.7.9-2-any.pkg.tar.xz
       md5: 1e897e44f2f41d1ed82a7e02ae035f39
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/automake1.7
       url: http://repo.msys2.org/msys/x86_64/automake1.7-1.7.9-2-any.pkg.tar.xz
       md5: c575c10691d4fac8c37895ba6f2cab75
       mv-src: '*'

@@ -11,16 +11,18 @@ requirements:
   - m2-msys2-gcc-libs
 about:
   home: http://www.pcre.org/
-  license: GPL (msys-2.0.dll linkage), BSD
+  license: GPL, BSD
   summary: A library that implements Perl 5-style regular expressions
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libpcre
       url: http://repo.msys2.org/msys/i686/libpcre-8.38-1-i686.pkg.tar.xz
       md5: a7320c35e86e2180c4bac4734272ac3b
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libpcre
       url: http://repo.msys2.org/msys/x86_64/libpcre-8.38-1-x86_64.pkg.tar.xz
       md5: b6b14993a9e0fe219e68d821fb1c6ea2
       mv-src: '*'

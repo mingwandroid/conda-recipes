@@ -2,27 +2,29 @@ package:
   name: m2-mingw-w64-gcc-fortran
   version: 5.3.0
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-gcc-fortran-5.3.0-2.src.tar.gz
-  md5: baadc0debaadc0debaadc0debaadc0de
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-gcc-fortran-5.3.0-5.src.tar.gz
+  md5: 936524317a13f7da01ff4676bdb271e2
 build:
-  number: '2'
+  number: '5'
 requirements:
   run:
   - m2-mingw-w64-gcc
   - m2-mingw-w64-gcc-libgfortran
 about:
-  home: http://gcc.gnu.org
+  home: https://gcc.gnu.org
   license: GPL, LGPL, FDL, custom
   summary: GNU Compiler Collection (Fortran) for MinGW-w64
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-fortran-5.3.0-2-any.pkg.tar.xz
-      md5: 42c87f708c08abe6750f7172d9af443e
+      srcpkg: mingw32/mingw-w64-i686-gcc-fortran
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-fortran-5.3.0-5-any.pkg.tar.xz
+      md5: 15fce9686e3269eedf680ef060cb1b7f
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-fortran-5.3.0-2-any.pkg.tar.xz
-      md5: 2b077740c5062155e0e5ba118e3529fc
+      srcpkg: mingw64/mingw-w64-x86_64-gcc-fortran
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-fortran-5.3.0-5-any.pkg.tar.xz
+      md5: 52675bd7b921463e51c443a6c2b3e45c
       mv-src: mingw64
       mv-dst: Library/mingw-w64

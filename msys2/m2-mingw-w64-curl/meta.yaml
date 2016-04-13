@@ -1,9 +1,9 @@
 package:
   name: m2-mingw-w64-curl
-  version: 7.47.1
+  version: 7.48.0
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-curl-7.47.1-1.src.tar.gz
-  md5: e6c9ed9854e085e4dbf073abf4968733
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-curl-7.48.0-1.src.tar.gz
+  md5: 64dc448ef8e349bd7c6e1336d5a90e71
 build:
   number: '1'
 requirements:
@@ -11,11 +11,13 @@ requirements:
   - m2-mingw-w64-gcc-libs
   - m2-mingw-w64-c-ares
   - m2-mingw-w64-libidn
+  - m2-mingw-w64-libmetalink
   - m2-mingw-w64-libssh2
   - m2-mingw-w64-zlib
   - m2-mingw-w64-rtmpdump-git
   - m2-mingw-w64-ca-certificates
   - m2-mingw-w64-openssl
+  - m2-mingw-w64-nghttp2
 about:
   home: https://curl.haxx.se
   license: MIT
@@ -23,12 +25,14 @@ about:
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-curl-7.47.1-1-any.pkg.tar.xz
-      md5: 22a3bff52fc5b6c3da8162a2af3423c7
+      srcpkg: mingw32/mingw-w64-i686-curl
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-curl-7.48.0-1-any.pkg.tar.xz
+      md5: c63ebeeafcf7cd2efd785767d9f11050
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-curl-7.47.1-1-any.pkg.tar.xz
-      md5: 3289509f650020dbc9bbe438536529d9
+      srcpkg: mingw64/mingw-w64-x86_64-curl
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-curl-7.48.0-1-any.pkg.tar.xz
+      md5: e9fbb18a0956e7147fb6283daa35892a
       mv-src: mingw64
       mv-dst: Library/mingw-w64

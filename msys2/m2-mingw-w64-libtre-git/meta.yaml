@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: mingw32/mingw-w64-i686-libtre-git
       url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-libtre-git-r122.c2f5d13-4-any.pkg.tar.xz
       md5: b866110d6bb7c91e11db268cca5437ed
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
+      srcpkg: mingw64/mingw-w64-x86_64-libtre-git
       url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libtre-git-r122.c2f5d13-4-any.pkg.tar.xz
       md5: 6a52bec89e35ca47b74252b3c18f8e1c
       mv-src: mingw64

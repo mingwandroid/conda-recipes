@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/perl-Net-HTTP
       url: http://repo.msys2.org/msys/i686/perl-Net-HTTP-6.09-1-any.pkg.tar.xz
       md5: 152399acb29179f4de450e00551c28ce
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/perl-Net-HTTP
       url: http://repo.msys2.org/msys/x86_64/perl-Net-HTTP-6.09-1-any.pkg.tar.xz
       md5: a9ce62b9268bff39fba985fcd89c0cee
       mv-src: '*'

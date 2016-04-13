@@ -11,16 +11,18 @@ requirements:
   - m2-msys2-info
 about:
   home: http://www.gnu.org/software/libidn/
-  license: GPL (msys-2.0.dll linkage), GPL3, LGPL
+  license: GPL, GPL3, LGPL
   summary: Implementation of the Stringprep, Punycode and IDNA specifications
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libidn
       url: http://repo.msys2.org/msys/i686/libidn-1.32-1-i686.pkg.tar.xz
       md5: c71501792a9b57b618753afb22b28906
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libidn
       url: http://repo.msys2.org/msys/x86_64/libidn-1.32-1-x86_64.pkg.tar.xz
       md5: 0feaea949d0171839498b182980cddcf
       mv-src: '*'

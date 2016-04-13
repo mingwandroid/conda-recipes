@@ -11,17 +11,19 @@ requirements:
   - m2-msys2-info
 about:
   home: http://www.gnu.org/software/libtasn1/
-  license: GPL (msys-2.0.dll linkage), GPL3, LGPL
+  license: GPL, GPL3, LGPL
   summary: A library for Abstract Syntax Notation One (ASN.1) and Distinguish Encoding
     Rules (DER) manipulation.
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/libtasn1
       url: http://repo.msys2.org/msys/i686/libtasn1-4.7-1-i686.pkg.tar.xz
       md5: 76789e02b3334176be74eddf4cb76e68
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/libtasn1
       url: http://repo.msys2.org/msys/x86_64/libtasn1-4.7-1-x86_64.pkg.tar.xz
       md5: c9a68a1ca134646fb796cf449b8970a7
       mv-src: '*'

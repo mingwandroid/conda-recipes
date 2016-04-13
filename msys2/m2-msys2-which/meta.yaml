@@ -12,16 +12,18 @@ requirements:
   - m2-msys2-bash
 about:
   home: http://www.xs4all.nl/~carlo17/which
-  license: GPL (msys-2.0.dll linkage), GPL3
+  license: GPL, GPL3
   summary: A utility to show the full path of commands
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/which
       url: http://repo.msys2.org/msys/i686/which-2.21-2-i686.pkg.tar.xz
       md5: 3b818117f90142047be54b0dd090d15c
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/which
       url: http://repo.msys2.org/msys/x86_64/which-2.21-2-x86_64.pkg.tar.xz
       md5: 7a46e4eecbf16cf7254ff6316e3b9a69
       mv-src: '*'

@@ -17,11 +17,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/automake1.11
       url: http://repo.msys2.org/msys/i686/automake1.11-1.11.6-3-any.pkg.tar.xz
       md5: 57d296cb256fdf2e0c584f93a1e30925
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/automake1.11
       url: http://repo.msys2.org/msys/x86_64/automake1.11-1.11.6-3-any.pkg.tar.xz
       md5: 946f86a77f9cf22351e4e7cdd53e9bdc
       mv-src: '*'

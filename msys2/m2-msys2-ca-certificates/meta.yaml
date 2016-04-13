@@ -21,11 +21,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/ca-certificates
       url: http://repo.msys2.org/msys/i686/ca-certificates-20150426-1-any.pkg.tar.xz
       md5: bf0a485ac68cd73bbd0bb1c9ea345c64
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/ca-certificates
       url: http://repo.msys2.org/msys/x86_64/ca-certificates-20150426-1-any.pkg.tar.xz
       md5: f41511bb6d0902b7316efc88605d8382
       mv-src: '*'

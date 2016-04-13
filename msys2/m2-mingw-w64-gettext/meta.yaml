@@ -1,29 +1,31 @@
 package:
   name: m2-mingw-w64-gettext
-  version: 0.19.6
+  version: 0.19.7
 source:
-  url: http://repo.msys2.org/mingw/sources/mingw-w64-gettext-0.19.6-2.src.tar.gz
-  md5: d521a945fcce911d1c29e2d4377861b8
+  url: http://repo.msys2.org/mingw/sources/mingw-w64-gettext-0.19.7-1.src.tar.gz
+  md5: c2566a5b55e995a54d7de0edc8588027
 build:
-  number: '2'
+  number: '1'
 requirements:
   run:
   - m2-mingw-w64-expat
   - m2-mingw-w64-gcc-libs
   - m2-mingw-w64-libiconv
 about:
-  home: http://www.gnu.org/software/gettext/
+  home: https://www.gnu.org/software/gettext/
   license: GPL3, partial:LGPL2.1
   summary: GNU internationalization library (mingw-w64)
 extra:
   msys2-binaries:
     win-32:
-      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gettext-0.19.6-2-any.pkg.tar.xz
-      md5: 4e385b64a99c1397df474d5d91d10b9a
+      srcpkg: mingw32/mingw-w64-i686-gettext
+      url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-gettext-0.19.7-1-any.pkg.tar.xz
+      md5: 39d427e64169f71a9acc1f50beaf2ca1
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
-      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gettext-0.19.6-2-any.pkg.tar.xz
-      md5: c18a06761351330ba290ff50a4d86563
+      srcpkg: mingw64/mingw-w64-x86_64-gettext
+      url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gettext-0.19.7-1-any.pkg.tar.xz
+      md5: 808e236b7267f1efe43ba810ccfbdace
       mv-src: mingw64
       mv-dst: Library/mingw-w64

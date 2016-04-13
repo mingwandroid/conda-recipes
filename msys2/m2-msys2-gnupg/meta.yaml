@@ -22,11 +22,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/gnupg
       url: http://repo.msys2.org/msys/i686/gnupg-1.4.20-1-i686.pkg.tar.xz
       md5: bc5d22af35ae55e0d35790ef97ce3922
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/gnupg
       url: http://repo.msys2.org/msys/x86_64/gnupg-1.4.20-1-x86_64.pkg.tar.xz
       md5: f7cb9452c37374805463fb7cca9b15a3
       mv-src: '*'

@@ -14,16 +14,18 @@ requirements:
   - m2-msys2-libintl
 about:
   home: http://flex.sourceforge.net
-  license: GPL (msys-2.0.dll linkage), custom
+  license: GPL, custom
   summary: A tool for generating text-scanning programs
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/flex
       url: http://repo.msys2.org/msys/i686/flex-2.6.0-1-i686.pkg.tar.xz
       md5: 13d9a8b91ef1b9d87a5e5d92589c6909
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/flex
       url: http://repo.msys2.org/msys/x86_64/flex-2.6.0-1-x86_64.pkg.tar.xz
       md5: 9b4e7d1bd644565b85648d7e7dbec99a
       mv-src: '*'

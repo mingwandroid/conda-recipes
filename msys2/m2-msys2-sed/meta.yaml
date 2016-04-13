@@ -12,16 +12,18 @@ requirements:
   - m2-msys2-bash
 about:
   home: http://www.gnu.org/software/sed
-  license: GPL (msys-2.0.dll linkage), GPL3
+  license: GPL, GPL3
   summary: GNU stream editor
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: msys/sed
       url: http://repo.msys2.org/msys/i686/sed-4.2.2-2-i686.pkg.tar.xz
       md5: 24d0944b8158139f1c1923188c451d55
       mv-src: '*'
       mv-dst: Library/
     win-64:
+      srcpkg: msys/sed
       url: http://repo.msys2.org/msys/x86_64/sed-4.2.2-2-x86_64.pkg.tar.xz
       md5: 7742e58b285cbc4a686e40c9b9aaf638
       mv-src: '*'

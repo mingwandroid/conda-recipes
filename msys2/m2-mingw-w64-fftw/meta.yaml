@@ -16,11 +16,13 @@ about:
 extra:
   msys2-binaries:
     win-32:
+      srcpkg: mingw32/mingw-w64-i686-fftw
       url: http://repo.msys2.org/mingw/i686/mingw-w64-i686-fftw-3.3.4-5-any.pkg.tar.xz
       md5: fb6f08bd1120f11d9e5347e83047f4f6
       mv-src: mingw32
       mv-dst: Library/mingw-w64
     win-64:
+      srcpkg: mingw64/mingw-w64-x86_64-fftw
       url: http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-fftw-3.3.4-5-any.pkg.tar.xz
       md5: db7ec502f0fd8542a818580d7ef814f0
       mv-src: mingw64

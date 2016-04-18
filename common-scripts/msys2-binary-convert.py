@@ -46,11 +46,11 @@ def get_tar_xz(url, md5):
 def main():
     recipe_dir = os.environ["RECIPE_DIR"]
     src_dir = os.environ["SRC_DIR"]
-    conda_platform = 'win-32' if os.environ["ARCH"] == 'i686' else 'win-64'
+    conda_platform = 'win-32' if os.environ["ARCH"] == '32' else 'win-64'
     prefix = os.environ['PREFIX']
-    print('prefix is %s, recipe_dir is %s' % (prefix, recipe_dir))
+    print('prefix is %s, recipe_dir is %s, conda_platform is %s' % (prefix, recipe_dir, conda_platform))
     main_work_dir = source.WORK_DIR
-    
+
     metadata = MetaData(recipe_dir)
     msys2_tar_xz_url = metadata.get_section('extra')['msys2-binaries'][conda_platform]['url']
     msys2_md5 = metadata.get_section('extra')['msys2-binaries'][conda_platform]['md5']

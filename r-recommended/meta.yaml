@@ -4,6 +4,7 @@ package:
 
 requirements:
   run:
+    - r-base
     - r-boot
     - r-class
     - r-cluster

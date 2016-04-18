@@ -5,7 +5,8 @@ package:
 requirements:
   # Not really needed, but just to make sure that they are built
   build:
-    - r
+    - r-base
+    - r-recommended
     - r-ggplot2
     - r-plyr
     - r-reshape2
@@ -23,7 +24,8 @@ requirements:
     - r-irkernel
     - r-rbokeh
   run:
-    - r
+    - r-base
+    - r-recommended
     - r-ggplot2
     - r-plyr
     - r-reshape2

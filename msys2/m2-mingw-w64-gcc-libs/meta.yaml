@@ -5,11 +5,12 @@ source:
   url: http://repo.msys2.org/mingw/sources/mingw-w64-gcc-libs-5.3.0-5.src.tar.gz
   md5: 936524317a13f7da01ff4676bdb271e2
 build:
-  number: '5'
+  number: '6'
 requirements:
   run:
   - m2-mingw-w64-gmp
   - m2-mingw-w64-libwinpthread-git
+  - m2-mingw-w64-gcc-libgfortran
 about:
   home: https://gcc.gnu.org
   license: GPL3+, partial:GCCRLE, partial:LGPL2+

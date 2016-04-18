@@ -35,6 +35,7 @@ requirements:
     - r-base
     - {{posix}}base       # [win]
     - {{posix}}git        # [win]
+    - {{native}}toolchain # [win]
     - r-rjsonio >=0.8_2
     - r-rcpp
     - r-catools >=1.16

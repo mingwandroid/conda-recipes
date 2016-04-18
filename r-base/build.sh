@@ -179,7 +179,7 @@ Mingw_w64_makefiles() {
         # The thing to is probably to make stub programs launching the right binaries in mingw-w64/bin
         # .. perhaps launcher.c can be generalized?
         mkdir -p "${SRC_DIR}/Tcl"
-        conda install -c https://conda.anaconda.org/rdonnelly \
+        conda install -c https://conda.anaconda.org/msys2 \
                       --no-deps --yes --copy --prefix "${SRC_DIR}/Tcl" \
                       m2-mingw-w64-{tcl,tk,bwidget,tktable}
         mv "${SRC_DIR}"/Tcl/Library/mingw-w64/* "${SRC_DIR}"/Tcl/

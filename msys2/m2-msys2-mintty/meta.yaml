@@ -1,6 +1,6 @@
 package:
   name: m2-msys2-mintty
-  version: 1~2.2.3
+  version: 1.2.2.3
 source:
   url: http://repo.msys2.org/msys/sources/mintty-1~2.2.3-1.src.tar.gz
   md5: a068236fdfc4962a7ed539b2d34d0788

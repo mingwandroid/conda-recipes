@@ -6,7 +6,7 @@
 @rem that that it doesn't block the terminal, but we also can't get the return
 @rem value for the conda build tests.
 
-gcc -DGUI=0 -O -s -m"%ARCH%" -o launcher.exe "%RECIPE_DIR%\launcher.c"
+gcc -DGUI=0 -O -s -o launcher.exe "%RECIPE_DIR%\launcher.c"
 if errorlevel 1 exit 1
 
 @rem Install the launcher

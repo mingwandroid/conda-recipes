@@ -181,7 +181,7 @@ Mingw_w64_makefiles() {
         mkdir -p "${SRC_DIR}/Tcl"
         conda install -c https://conda.anaconda.org/msys2 \
                       --no-deps --yes --copy --prefix "${SRC_DIR}/Tcl" \
-                      m2-mingw-w64-{tcl,tk,bwidget,tktable}
+                      m2w64-{tcl,tk,bwidget,tktable}
         mv "${SRC_DIR}"/Tcl/Library/mingw-w64/* "${SRC_DIR}"/Tcl/
         rm -Rf "${SRC_DIR}"/Tcl/{Library,conda-meta,.BUILDINFO,.MTREE,.PKGINFO}
         if [[ "${ARCH}" == "64" ]]; then

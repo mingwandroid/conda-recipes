@@ -1,5 +1,5 @@
-{% set posix = 'm2-msys2-' if win else '' %}
-{% set native = 'm2-mingw-w64-' if win else '' %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-fracdiff
@@ -35,8 +35,7 @@ build:
 requirements:
   build:
     - r-base
-    - {{posix}}base       # [win]
-    - {{posix}}zip        # [win]
+    - posix               # [win]
     - {{native}}toolchain # [win]
     - gcc                 # [not win]
 

@@ -1,4 +1,4 @@
-{% set pfx = 'm2-mingw-w64-' if win else '' %}
+{% set pfx = 'm2w64-' if win else '' %}
 
 package:
   name: r-base
@@ -26,14 +26,11 @@ build:
 
 requirements:
   build:
-    - m2-msys2-base        # [win]
-    - m2-msys2-texinfo-tex # [win]
-    - m2-msys2-texinfo     # [win]
-    - m2-msys2-curl        # [win]
-    - m2-msys2-zip         # [win]
-    - m2-msys2-unzip       # [win]
-    - m2-msys2-p7zip       # [win]
-    - m2-msys2-tar         # [win]
+    - posix                # [win]
+    - m2-texinfo-tex       # [win]
+    - m2-texinfo           # [win]
+    - m2-curl              # [win]
+    - m2-p7zip             # [win]
     - readline             # [not win]
     - ncurses              # [not win]
     - cairo                # [linux]

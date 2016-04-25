@@ -54,8 +54,8 @@ def main():
     metadata = MetaData(recipe_dir)
     msys2_tar_xz_url = metadata.get_section('extra')['msys2-binaries'][conda_platform]['url']
     msys2_md5 = metadata.get_section('extra')['msys2-binaries'][conda_platform]['md5']
-    mv_src = metadata.get_section('extra')['msys2-binaries'][conda_platform]['mv-src']
-    mv_dst = metadata.get_section('extra')['msys2-binaries'][conda_platform]['mv-dst']
+    mv_srcs_list = metadata.get_section('extra')['msys2-binaries'][conda_platform]['mv-srcs']
+    mv_dsts_list = metadata.get_section('extra')['msys2-binaries'][conda_platform]['mv-dsts']
     msys2_tar_xz = get_tar_xz(msys2_tar_xz_url, msys2_md5)
     tar = tarfile.open(msys2_tar_xz, 'r|xz')
     tar.extractall(path=prefix)
@@ -78,21 +78,22 @@ def main():
     # .. otherwise we makedirs(dirname(mv_dst)) and then call move(mv_src, mv_dst)
     # ^ But .. in both cases, if no mv_srcs exist we don't makedirs at all.
 
-    mv_dst_definitely_dir = False
-    mv_srcs = glob(join(prefix, normpath(mv_src)))
-    if '*' in mv_src or mv_dst.endswith('/') or len(mv_srcs) > 1:
-        mv_dst_definitely_dir = True
-    if len(mv_srcs):
-        mv_dst = join(prefix, normpath(mv_dst))
-        mv_dst_mkdir = mv_dst
-        if not mv_dst_definitely_dir:
-            mv_dst_mkdir = dirname(mv_dst_mkdir)
-        try:
-            makedirs(mv_dst_mkdir)
-        except:
-            pass
-        for mv_src in mv_srcs:
-            move(mv_src, mv_dst)
+    for mv_src, mv_dst in zip(mv_srcs_list, mv_dsts_list):
+        mv_dst_definitely_dir = False
+        mv_srcs = glob(join(prefix, normpath(mv_src)))
+        if '*' in mv_src or mv_dst.endswith('/') or len(mv_srcs) > 1:
+            mv_dst_definitely_dir = True
+        if len(mv_srcs):
+            mv_dst = join(prefix, normpath(mv_dst))
+            mv_dst_mkdir = mv_dst
+            if not mv_dst_definitely_dir:
+                mv_dst_mkdir = dirname(mv_dst_mkdir)
+            try:
+                makedirs(mv_dst_mkdir)
+            except:
+                pass
+            for mv_src in mv_srcs:
+                move(mv_src, mv_dst)
     tar.close()
     
 if __name__ == "__main__":

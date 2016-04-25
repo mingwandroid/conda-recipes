@@ -8,6 +8,7 @@ build:
   number: '2'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-msys2-runtime
 about:
   home: http://cyberelk.net/tim/software/patchutils/

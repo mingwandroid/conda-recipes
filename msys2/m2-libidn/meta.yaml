@@ -8,6 +8,7 @@ build:
   number: '1'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-info
 about:
   home: http://www.gnu.org/software/libidn/

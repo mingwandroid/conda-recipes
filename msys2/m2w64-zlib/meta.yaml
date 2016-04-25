@@ -8,6 +8,7 @@ build:
   number: '9'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2w64-bzip2
 about:
   home: http://www.zlib.net/

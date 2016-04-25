@@ -8,6 +8,7 @@ build:
   number: '2'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-libiconv
 about:
   home: http://www.gnu.org/software/libiconv/

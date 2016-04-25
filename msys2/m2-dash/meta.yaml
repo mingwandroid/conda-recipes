@@ -8,6 +8,7 @@ build:
   number: '1'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-filesystem
   - m2-msys2-runtime
   - m2-grep

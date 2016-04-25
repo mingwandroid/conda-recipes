@@ -8,6 +8,7 @@ build:
   number: '3'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-gmp
   - m2-libltdl
   - m2-ncurses

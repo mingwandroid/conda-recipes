@@ -8,6 +8,7 @@ build:
   number: '1'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2w64-flac
   - m2w64-libvorbis
   - m2w64-speex

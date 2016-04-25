@@ -8,6 +8,7 @@ build:
   number: '5'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2w64-binutils
   - m2w64-crt-git
   - m2w64-headers-git

@@ -8,6 +8,7 @@ build:
   number: '2'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-gawk
   - m2-m4
   - m2-diffutils

@@ -8,6 +8,7 @@ build:
   number: '3'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-gcc-libs
 about:
   home: http://www.gnu.org/software/gdbm/gdbm.html

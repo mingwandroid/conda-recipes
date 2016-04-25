@@ -8,6 +8,7 @@ build:
   number: '1'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2w64-gcc-libs
   - m2w64-gmp
   - m2w64-libidn

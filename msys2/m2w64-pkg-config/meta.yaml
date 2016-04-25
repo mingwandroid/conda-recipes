@@ -8,6 +8,7 @@ build:
   number: '1'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2w64-libwinpthread-git
 about:
   home: https://www.freedesktop.org/wiki/Software/pkg-config/

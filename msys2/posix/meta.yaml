@@ -5,7 +5,7 @@ build:
   number: '1'
 requirements:
   run:
-  - msys2-conda-epoch >= 20160418
+  - msys2-conda-epoch >=20160418
   - m2-base
   - m2-make
   - m2-tar

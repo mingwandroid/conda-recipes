@@ -8,6 +8,7 @@ build:
   number: '9'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-heimdal-libs
 about:
   home: https://www.h5l.org/

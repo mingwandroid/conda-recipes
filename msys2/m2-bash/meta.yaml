@@ -8,6 +8,7 @@ build:
   number: '4'
 requirements:
   run:
+  - msys2-conda-epoch >=20160418
   - m2-msys2-runtime
 about:
   home: http://www.gnu.org/software/bash/bash.html

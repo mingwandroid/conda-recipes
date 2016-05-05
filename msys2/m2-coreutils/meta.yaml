@@ -5,7 +5,7 @@ source:
   url: http://repo.msys2.org/msys/sources/coreutils-8.25-1.src.tar.gz
   md5: 4e3ab371d3e3953744cd2c3543a87dfa
 build:
-  number: '1'
+  number: '101'
 requirements:
   run:
   - msys2-conda-epoch >=20160418

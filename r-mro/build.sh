@@ -52,7 +52,7 @@ Linux() {
 
     make
     make install
-    (cd $PREFIX && patch -p1 -i $RECIPE_DIR/MakeConf.patch)
+    (cd $PREFIX && sed -i "s|-B${PREFIX}|-B\$(PREFIX)|g" lib/R/etc/Makeconf)
     (cd $PREFIX && patch -p1 -i $RECIPE_DIR/R.patch)
 
     # Copy MRO files
